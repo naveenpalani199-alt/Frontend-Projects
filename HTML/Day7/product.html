@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Registration & Inventory Report</title>
+</head>
+<body>
+
+  <h1>PRODUCT REGISTRATION FORM</h1>
+  <form action="" method="post">
+
+    <label for="pid">Product ID:</label>
+    <input type="text" id="pid" name="pid" required><br><br>
+
+    <label for="pname">Product Name:</label>
+    <input type="text" id="pname" name="pname" required><br><br>
+
+    <label for="brand">Brand:</label>
+    <input type="text" id="brand" name="brand" required><br><br>
+
+    <label for="category">Category:</label>
+    <select id="category" name="category" required>
+      <option value="">--Select Category--</option>
+      <option value="Mobile">Mobile</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Television">Television</option>
+      <option value="Accessories">Accessories</option>
+    </select><br><br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required><br><br>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" required><br><br>
+
+    <label for="supplier">Supplier:</label>
+    <input type="text" id="supplier" name="supplier"><br><br>
+
+    <label for="image">Product Image:</label>
+    <input type="file" id="image" name="image"><br><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <hr>
+
+  <h1>INVENTORY REPORT</h1>
+  <table border="2">
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Stock Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PR001</td>
+        <td>iPhone 15</td>
+        <td>Apple</td>
+        <td>80000</td>
+        <td>10</td>
+        <td>In Stock</td>
+      </tr>
+      <tr>
+        <td>PR002</td>
+        <td>Galaxy S24</td>
+        <td>Samsung</td>
+        <td>70000</td>
+        <td>0</td>
+        <td>Out of Stock</td>
+      </tr>
+      <tr>
+        <td>PR003</td>
+        <td>ThinkPad X1</td>
+        <td>Lenovo</td>
+        <td>95000</td>
+        <td>5</td>
+        <td>Low Stock</td>
+      </tr>
+      <tr>
+        <td>PR004</td>
+        <td>Macbook</td>
+        <td>Apple</td>
+        <td>125000</td>
+        <td>15</td>
+        <td>In Stock</td>
+      </tr>
+      <tr>
+        <td>PR005</td>
+        <td>M12 Pro</td>
+        <td>Poco</td>
+        <td>20000</td>
+        <td>23</td>
+        <td>In Stock</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

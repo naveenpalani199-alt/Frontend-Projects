@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 8px;
+      margin: 5px 0;
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* First child styling */
+    li:first-child {
+      background-color: #d1e7dd;
+      font-weight: bold;
+    }
+
+    /* Last child styling */
+    li:last-child {
+      background-color: #f8d7da;
+      font-style: italic;
+    }

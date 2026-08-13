@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Admission Form</title>
+</head>
+<body>
+
+  <h1>ENGINEERING COLLEGE ADMISSION FORM</h1>
+  <form action="" method="post">
+
+    <label for="sname">Student Name:</label>
+    <input type="text" id="sname" name="sname" required><br><br>
+
+    <label for="fname">Father Name:</label>
+    <input type="text" id="fname" name="fname" required><br><br>
+
+    <label for="mname">Mother Name:</label>
+    <input type="text" id="mname" name="mname" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required><br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br><br>
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="Other">
+    <label for="other">Other</label><br><br>
+
+    <label for="dept">Department:</label>
+    <select id="dept" name="dept" required>
+      <option value="">--Select Department--</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Mechanical">Mechanical</option>
+      <option value="Civil">Civil</option>
+      <option value="Electrical">Electrical</option>
+    </select><br><br>
+
+    <label for="percentage">Percentage:</label>
+    <input type="number" id="percentage" name="percentage" min="0" max="100" required><br><br>
+
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address" rows="4" cols="40"></textarea><br><br>
+
+    <label for="photo">Passport Size Photo:</label>
+    <input type="file" id="photo" name="photo"><br><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <hr>
+
+  <h1>ADMISSION REPORT</h1>
+  <table border="2">
+    <thead>
+      <tr>
+        <th>Application ID</th>
+        <th>Student Name</th>
+        <th>Department</th>
+        <th>Percentage</th>
+        <th>Email</th>
+        <th>Admission Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>APP001</td>
+        <td>Arun Kumar</td>
+        <td>Computer Science</td>
+        <td>92</td>
+        <td>arun@example.com</td>
+        <td>Approved</td>
+      </tr>
+      <tr>
+        <td>APP002</td>
+        <td>Divya R</td>
+        <td>Mechanical</td>
+        <td>85</td>
+        <td>divya@example.com</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>APP003</td>
+        <td>Ranjith R</td>
+        <td>ECE</td>
+        <td>90</td>
+        <td>ranji@example.com</td>
+        <td>Approved</td>
+      </tr>
+      <tr>
+        <td>APP004</td>
+        <td>Lavanya S</td>
+        <td>EEE</td>
+        <td>82</td>
+        <td>lavanya23@example.com</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>APP005</td>
+        <td>Prathab</td>
+        <td>Information Technology</td>
+        <td>92</td>
+        <td>prathap182@example.com</td>
+        <td>Approved</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

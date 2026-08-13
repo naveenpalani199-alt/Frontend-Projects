@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+p {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 15px 0;
+    }
+
+    /* Make the first letter larger */
+    p::first-letter {
+      font-size: 28px;
+      font-weight: bold;
+      color: #007BFF;
+    }
+
+    /* Change the first line color */
+    p::first-line {
+      color: #d63384;
+    }
+
+    /* Change text selection color */
+    ::selection {
+      background: #ffeb3b;
+      color: #000;
+    }

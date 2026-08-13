@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h2 {
+      font-family: Arial, sans-serif;
+      margin: 10px 0;
+    }
+
+    /* Add star before each heading */
+    h2::before {
+      content: "★ ";
+      color: gold;
+    }
+
+    /* Add checkmark after each heading */
+    h2::after {
+      content: " ✔";
+      color: green;
+    }

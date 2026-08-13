@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EMPLOYEE REGISTRATION</title>
+</head>
+<body>
+
+  <h1>EMPLOYEE REGISTRATION FORM</h1>
+  <form action="" method="post">
+
+    <label for="empid">Employee ID:</label>
+    <input type="text" id="empid" name="empid" required><br><br>
+
+    <label for="empname">Employee Name:</label>
+    <input type="text" id="empname" name="empname" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="mobile">Mobile:</label>
+    <input type="tel" id="mobile" name="mobile" required><br><br>
+
+    <label for="dept">Department:</label>
+    <select id="dept" name="dept" required>
+      <option value="">--Select Department--</option>
+      <option value="Development">Development</option>
+      <option value="Testing">Testing</option>
+      <option value="HR">HR</option>
+      <option value="Finance">Finance</option>
+    </select><br><br>
+
+    <label for="exp">Experience (Years):</label>
+    <input type="number" id="exp" name="exp" min="0" required><br><br>
+
+    <label for="salary">Salary:</label>
+    <input type="number" id="salary" name="salary" required><br><br>
+
+    <label for="skills">Skills:</label>
+    <input type="checkbox" name="html" id="html">HTML
+    <input type="checkbox" name="css" id="css">CSS
+    <input type="checkbox" name="python" id="python">PYTHON
+    <input type="checkbox" name="react" id="react">REACT<br><br>
+
+    <label for="resume">Resume Upload:</label>
+    <input type="file" id="resume" name="resume"><br><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <hr>
+
+  <h1>EMPLOYEE REPORT</h1>
+  <table border="2">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Department</th>
+        <th>Experience</th>
+        <th>Salary</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EMP001</td>
+        <td>Alice Johnson</td>
+        <td>Development</td>
+        <td>5</td>
+        <td>75000</td>
+        <td>Hired</td>
+      </tr>
+      <tr>
+        <td>EMP002</td>
+        <td>Bob Smith</td>
+        <td>Testing</td>
+        <td>3</td>
+        <td>55000</td>
+        <td>Interview Scheduled</td>
+      </tr>
+      <tr>
+        <td>EMP003</td>
+        <td>Henry</td>
+        <td>Testing</td>
+        <td>4</td>
+        <td>55000</td>
+        <td>Interview Scheduled</td>
+      </tr>
+      <tr>
+        <td>EMP004</td>
+        <td>Thomas</td>
+        <td>Developer</td>
+        <td>3</td>
+        <td>65000</td>
+        <td>Interview Scheduled</td>
+      </tr>
+      <tr>
+        <td>EMP005</td>
+        <td>William</td>
+        <td>Supporting</td>
+        <td>2</td>
+        <td>45000</td>
+        <td>Interview Scheduled</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

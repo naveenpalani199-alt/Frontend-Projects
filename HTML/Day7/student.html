@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration</title>
+</head>
+<body>
+
+  <h1>STUDENT REGISTRATION FORM</h1>
+  <form action="" method="post">
+    
+    <label for="name">Student Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="mobile">Mobile Number:</label>
+    <input type="tel" id="mobile" name="mobile" required><br><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="1" required><br><br>
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="Other">
+    <label for="other">Other</label><br><br>
+
+    <label for="skills">Skills:</label>
+    <input type="text" id="skills" name="skills" placeholder="e.g. Java, Python"><br><br>
+
+    <label for="course">Course Selection:</label>
+    <select id="course" name="course" required>
+      <option value="">--Select Course--</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Data Science">Data Science</option>
+      <option value="AI & ML">AI & ML</option>
+      <option value="Cloud Computing">Cloud Computing</option>
+    </select><br><br>
+
+    <label for="address">Address:</label><br>
+    <textarea id="address" name="address" rows="4" cols="40"></textarea><br><br>
+
+    <label for="profile">Profile Image Upload:</label>
+    <input type="file" id="profile" name="profile"><br><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <hr>
+
+  <h1>STUDENT DETAILS</h1>
+  <table border="2">
+    <thead>
+      <tr>
+        <th>SLA ID</th>
+        <th>Student Name</th>
+        <th>Course</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>001</td>
+        <td>John Doe</td>
+        <td>Web Development</td>
+        <td>john@example.com</td>
+        <td>9876543210</td>
+        <td>Registered</td>
+      </tr>
+      <tr>
+        <td>002</td>
+        <td>Jane Smith</td>
+        <td>Data Science</td>
+        <td>jane@example.com</td>
+        <td>9123456780</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>003</td>
+        <td>Henry</td>
+        <td>Mern stack</td>
+        <td>hen@example.com</td>
+        <td>8765432145</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>004</td>
+        <td>thomas</td>
+        <td>Full stack</td>
+        <td>tommy@example.com</td>
+        <td>9876543210</td>
+        <td>Registered</td>
+      </tr>
+      <tr>
+        <td>005</td>
+        <td>William</td>
+        <td>Data Science</td>
+        <td>wills@example.com</td>
+        <td>8432156743</td>
+        <td>Pending</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

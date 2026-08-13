@@ -1,0 +1,43 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+    
+    font-family: Arial, sans-serif;
+}
+
+
+
+.box {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 150px; 
+}
+
+.box1 {
+  background-color: #3498db; 
+}
+
+.box2 {
+  background-color: #e74c3c;
+  position: relative;      
+  top: 40px;                
+  left: 60px;                
+}
+
+.box3 {
+  background-color: #2ecc71; 
+}

@@ -1,0 +1,53 @@
+Heading (<h1> – <h6>)
+
+Block-level → Always starts on a new line and takes up the full width.
+
+Purpose: Defines section titles.
+
+Paragraph (<p>)
+
+Block-level → Separates text into distinct blocks.
+
+Purpose: Holds text content.
+
+Bold (<b> or <strong>)
+
+Formatting + Inline → Emphasizes text within a line, does not break flow.
+
+Purpose: Highlights importance.
+
+Italic (<i> or <em>)
+
+Formatting + Inline → Slants text for emphasis, stays inline.
+
+Purpose: Adds emphasis or stylistic variation.
+
+Highlighted (<mark>)
+
+Formatting + Inline → Highlights text visually, remains inline.
+
+Purpose: Draws attention to specific words.
+
+Button (<button>)
+
+Interactive + Inline-block → Clickable element, fits inline but behaves like a block.
+
+Purpose: Triggers actions.
+
+Input Field (<input type="text">)
+
+Interactive + Inline-block → Accepts user input, inline but sized like a block.
+
+Purpose: Collects text data.
+
+Dropdown (<select>)
+
+Interactive + Inline-block → Lets users choose from options.
+
+Purpose: Provides selection control.
+
+Textarea (<textarea>)
+
+Interactive + Block-level → Multi-line text input, expands across width.
+
+Purpose: Collects longer text entries.

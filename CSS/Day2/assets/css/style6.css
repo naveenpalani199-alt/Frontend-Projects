@@ -1,0 +1,43 @@
+
+h2, p, span {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 5px 0;
+}
+
+div {
+    width: 350px;
+    height: 150px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+
+.zoho {
+    background-color: #ff6600; 
+}
+
+.freshworks {
+    background-color: #0066cc; 
+}
+
+.aspire {
+    background-color: #009933; 
+}
+
+.cts {
+    background-color: #800080; 
+}
+
+.tcs {
+    background-color: #990000; 
+}
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}

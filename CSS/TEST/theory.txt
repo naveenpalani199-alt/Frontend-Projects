@@ -1,0 +1,96 @@
+1.CSS stands for Cascading Style Sheets.It’s used to style HTML elements (colors, fonts, layouts, spacing, etc.)
+
+2.Cascading means that when multiple styles apply to the same element, CSS decides which one takes priority based on rules (origin, importance, specificity, order).
+           
+           p { color: blue; }
+            p { color: red; }
+
+3.Cascading: Order of rules and importance (later rules override earlier ones).Specificity: Priority based on selector type (ID > Class > Element).            
+               
+4. ->Inline CSS: Inside HTML element (<p style="color:red">).
+   ->Internal CSS: Inside <style> tag in HTML.
+   ->External CSS: Separate .css file linked with <link>.
+   ->Recommended: External CSS → cleaner, reusable, easier to maintain in real projects.            
+
+5.
+->Universal Selector (*)  
+Applies to all elements.
+
+css
+* { margin: 0; padding: 0; }
+
+->Element Selector (p)  
+Targets specific HTML tags.
+
+css
+p { color: blue; }
+
+->Class Selector (.classname)  
+Targets elements with a class.
+
+css
+.highlight { background: yellow; }
+
+->ID Selector (#idname)  
+Targets element with unique ID.
+
+css
+#header { font-size: 20px; }
+
+->Group Selector (h1, h2, p)  
+Applies same style to multiple elements.
+
+css
+h1, h2, p { color: gray; }
+
+->Descendant Selector (div p)  
+Targets <p> inside <div>.
+
+css
+div p { color: red; }
+
+->Child Selector (div > p)  
+Targets direct child <p> of <div>.
+
+css
+div > p { color: green; }
+
+6.  ->Class (.): Can be reused on multiple elements.
+    ->ID (#): Unique, used once per page.
+
+7. ->Descendant (div p): Matches all <p> inside <div> (nested at any level).
+   ->Child (div > p): Matches only direct children <p> inside <div>.
+
+
+8. ->Content – actual text/image.
+   ->Padding – space between content and border.
+   ->Border – edge around padding.
+   ->Margin – space outside border.
+
+
+9. ->Padding: Inside the element, between content and border.
+   ->Margin: Outside the element, between border and other elements.   
+
+10. ->Makes width/height include content + padding + border.
+    ->Recommended → prevents layout issues, easier to size elements consistently.   
+
+11. ->block: Takes full width, starts on new line (div, p).
+    ->inline: Fits content, doesn’t start new line (span, a).
+    ->inline-block: Behaves like inline but allows width/height.   
+
+12. ->div: Yes (block element).
+    ->span: No (inline element, unless changed to inline-block).
+    ->button: Yes (block-level by default, can be styled).    
+
+13. ->display:none: Element is removed from layout (no space).
+    ->visibility:hidden: Element is invisible but still occupies space.    
+
+14. ->Flex Container: Parent element with display:flex.
+     ->Flex Items: Children inside flex container.
+     ->Main Axis: Horizontal (default).
+     ->Cross Axis: Vertical (default).      
+
+15.  ->display:flex: activates flexbox.
+     ->justify-content:center: horizontal centering.
+     ->align-items:center: vertical centering.
+     ->height:100vh: ensures container fills screen.    

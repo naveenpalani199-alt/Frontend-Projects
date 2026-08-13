@@ -1,0 +1,41 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e6f2ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .id-card {
+      width: 350px;
+      height: auto;
+      padding: 20px;
+      margin: 0 auto;
+      border: 3px solid #333;
+      border-radius: 12px;
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .id-card img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
+
+    .id-card h2 {
+      margin: 10px 0;
+      color: #222;
+    }
+
+    .id-card p {
+      margin: 6px 0;
+      font-size: 15px;
+      color: #444;
+    }

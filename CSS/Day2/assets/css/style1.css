@@ -1,0 +1,34 @@
+html{
+    scroll-behavior: smooth;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+
+.company {
+    width: 300px;
+    height: 140px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+
+#zoho {
+    background-color: #ff6600; 
+}
+
+#tcs {
+    background-color: #0066cc; 
+}
+
+#infosys {
+    background-color: #009933; 
+}

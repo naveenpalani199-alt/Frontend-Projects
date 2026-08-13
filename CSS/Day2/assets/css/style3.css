@@ -1,0 +1,40 @@
+html{
+    scroll-behavior: smooth;
+}
+.department {
+    width: 300px;
+    height: 120px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+
+#cse {
+    background-color: #f23447; /* Dark Blue */
+}
+
+#it {
+    background-color: #0f35be; /* Green */
+}
+
+#ece {
+    background-color: #870eb6; /* Orange */
+}
+
+#eee {
+    background-color: #42b60c; /* Purple */
+}
+
+#mech {
+    background-color: #615a5a; /* Dark Red */
+}
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}

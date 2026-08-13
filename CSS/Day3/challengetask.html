@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Box Model Demonstration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px;
+    }
+
+    .card {
+      width: 280px;
+      height: auto;
+      padding: 20px;
+      padding-top: 25px;
+      padding-right: 20px;
+      padding-bottom: 25px;
+      padding-left: 20px;
+
+      border-width: 3px;
+      border-style: solid;
+      border-color: #333;
+      border-radius: 10px;
+
+      margin-top: 20px;
+      margin-right: 15px;
+      margin-bottom: 25px;
+      margin-left: 15px;
+
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 2px solid #666;
+    }
+
+    .card h2 {
+      margin: 10px 0;
+      color: #222;
+    }
+
+    .card p {
+      margin: 6px 0;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .student { border-color: #007bff; }
+    .employee { border-color: #28a745; }
+    .product { border-color: #ff4500; }
+    .movie { border-color: #6f42c1; }
+    .company { border-color: #17a2b8; }
+  </style>
+</head>
+<body>
+
+  <div class="card student">
+    <img src="assets/images.jpg" alt="Student">
+    <h2>Student Card</h2>
+    <p>Name: Henriques</p>
+    <p>Course: Computer Science</p>
+    <p>Mobile: +91 9876543210</p>
+  </div>
+
+  <div class="card employee">
+    <img src="assets/emp.jpg" alt="Employee">
+    <h2>Employee Card</h2>
+    <p>Name: Lawrence</p>
+    <p>ID: EMP12345</p>
+    <p>Department: HR</p>
+    <p>Email: lawrence234@gmail.com.com</p>
+  </div>
+
+  <div class="card product">
+    <img src="assets/headph.jpg" alt="Product">
+    <h2>Product Card</h2>
+    <p>Wireless Headphones</p>
+    <p>Price: ₹2,999</p>
+    <p>Noise cancellation, 20hr battery life</p>
+    <p><button>Buy Now</button></p>
+  </div>
+
+  <div class="card movie">
+    <img src="assets/incp.jpg" alt="Movie">
+    <h2>Movie Card</h2>
+    <p>Title: Inception</p>
+    <p>Director: Christopher Nolan</p>
+    <p>Release Year: 2010</p>
+  </div>
+
+  <div class="card company">
+    <img src="assets/tcslogo.jpg" alt="Company">
+    <h2>Company Card</h2>
+    <p>Company: Tata Consultancy Services.</p>
+    <p>Founded By:Ratan Tata</p>
+    <p>Year: 1968</p>
+    <p>Location: Mumbai,Maharastra India</p>
+  </div>
+
+</body>
+</html>

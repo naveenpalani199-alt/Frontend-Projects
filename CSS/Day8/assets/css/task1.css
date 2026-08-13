@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+a{
+    text-decoration: none;
+}
+
+.button{
+padding: 20px;
+display: flex;
+align-items: center;
+gap: 100px;
+}
+
+.button:hover{
+       
+background-color: aquamarine;
+color: rgb(169, 34, 34);
+
+
+}
