@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Specifications & Details | MotoVerse</title>
+  <meta name="description" content="View comprehensive technical specifications, verified mileage, dyno figures, high-resolution image gallery, color options and rider reviews.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏍️</text></svg>">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false }
+    }
+  </script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="details-page-root">
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <nav class="navbar navbar-expand-lg motoverse-navbar">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-logo" href="index.html">
+        <div class="brand-icon-flame">
+          <i class="bi bi-speedometer"></i>
+        </div>
+        <span>Moto<span class="text-accent">Verse</span></span>
+      </a>
+
+      <!-- Right mobile action triggers -->
+      <div class="d-flex align-items-center gap-2 d-lg-none order-lg-3">
+        <button class="btn-icon-square search-modal-trigger" title="Search">
+          <i class="bi bi-search"></i>
+        </button>
+        <button class="btn-icon-square wishlist-modal-trigger position-relative" title="Wishlist">
+          <i class="bi bi-heart"></i>
+          <span class="nav-badge-count nav-wishlist-count" style="display: none;">0</span>
+        </button>
+        <button class="btn-icon-square theme-toggle-btn" title="Toggle Theme">
+          <i class="bi bi-sun-fill text-amber"></i>
+        </button>
+        <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#motoNavbar" aria-controls="motoNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="motoNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" href="explore.html">Explore Bikes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="compare.html">Compare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="brands.html">Brands</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="reviews.html">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="about.html">About</a>
+          </li>
+        </ul>
+
+        <!-- Desktop Action Controls -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <button class="btn-icon-square search-modal-trigger" title="Quick Search (Ctrl+K)">
+            <i class="bi bi-search"></i>
+          </button>
+          
+          <button class="btn-icon-square wishlist-modal-trigger position-relative" title="Wishlist Saved Bikes">
+            <i class="bi bi-heart"></i>
+            <span class="nav-badge-count nav-wishlist-count" style="display: none;">0</span>
+          </button>
+
+          <a href="compare.html" class="btn-icon-square position-relative" title="Bike Comparison Matrix">
+            <i class="bi bi-arrow-left-right"></i>
+            <span class="nav-badge-count nav-compare-count" style="display: none;">0</span>
+          </a>
+
+          <button class="btn-icon-square theme-toggle-btn" title="Toggle Light/Dark Theme">
+            <i class="bi bi-sun-fill text-amber"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== BREADCRUMBS & OVERVIEW ==================== -->
+  <section class="py-4 bg-surface-custom border-bottom border-secondary border-opacity-10">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-3 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
+          <li class="breadcrumb-item"><a href="explore.html" class="text-muted">Explore</a></li>
+          <li class="breadcrumb-item"><span class="detail-brand-name text-muted">Brand</span></li>
+          <li class="breadcrumb-item active text-accent detail-bike-name" aria-current="page">Bike Name</li>
+        </ol>
+      </nav>
+
+      <div class="row g-4 g-lg-5 align-items-start">
+        
+        <!-- LEFT: INTERACTIVE IMAGE GALLERY -->
+        <div class="col-12 col-lg-7">
+          <div class="details-gallery-main">
+            <img id="detail-main-image" src="" alt="Motorcycle Main View">
+            <span id="detail-category-badge" class="badge bg-dark border border-secondary position-absolute top-3 start-3 px-3 py-2 text-uppercase">Sports</span>
+          </div>
+
+          <!-- Multi-angle Thumbnails -->
+          <div class="gallery-thumbs-row" id="detail-gallery-thumbs">
+            <!-- Populated via script.js -->
+          </div>
+
+          <!-- Color Swatch Selector -->
+          <div class="glass-card p-3 mt-3 d-flex align-items-center justify-content-between">
+            <div>
+              <div class="small text-muted text-uppercase fw-bold" style="font-size: 0.72rem;">Available Colorway</div>
+              <div id="detail-color-name" class="fw-bold" style="font-size: 0.95rem;">Racing Blue</div>
+            </div>
+            <div class="d-flex align-items-center gap-2" id="detail-color-swatches">
+              <!-- Swatches injected via script.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: OVERVIEW & SPECS SNAPSHOT -->
+        <div class="col-12 col-lg-5">
+          <div class="bike-brand-label detail-brand-name">Brand</div>
+          <h1 class="fw-bold fs-2 mb-2 detail-bike-name">Motorcycle Name</h1>
+          <p id="detail-tagline" class="text-muted small mb-3">Track-bred aerodynamic supremacy with Quickshifter.</p>
+
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="d-flex align-items-center gap-1 bg-emerald text-white px-2 py-1 rounded small fw-bold">
+              <span id="detail-rating">4.8</span> <i class="bi bi-star-fill"></i>
+            </div>
+            <span id="detail-reviews-count" class="text-muted small">(142 verified ratings)</span>
+            <span class="text-secondary small">&bull;</span>
+            <span class="badge bg-surface-elevated text-emerald border border-emerald border-opacity-25">In Stock</span>
+          </div>
+
+          <div class="p-3 glass-card mb-4">
+            <div class="text-muted small">Ex-Showroom Price (Estimate)</div>
+            <div class="d-flex align-items-baseline gap-2">
+              <span class="detail-bike-price fs-2 fw-bold text-accent">₹1,82,000</span>
+              <span class="text-muted small">*Taxes & RTO extra</span>
+            </div>
+          </div>
+
+          <!-- Quick Specs Snapshot Bar -->
+          <div class="row g-2 text-center mb-4">
+            <div class="col-4">
+              <div class="p-2 glass-panel">
+                <div class="text-muted small" style="font-size: 0.7rem;">DISPLACEMENT</div>
+                <div id="detail-spec-cc" class="fw-bold small">155 cc</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-2 glass-panel">
+                <div class="text-muted small" style="font-size: 0.7rem;">MAX POWER</div>
+                <div id="detail-spec-power" class="fw-bold small">18.4 PS</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-2 glass-panel">
+                <div class="text-muted small" style="font-size: 0.7rem;">MILEAGE</div>
+                <div id="detail-spec-mileage" class="fw-bold small">48 km/l</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-2 glass-panel">
+                <div class="text-muted small" style="font-size: 0.7rem;">TOP SPEED</div>
+                <div id="detail-spec-topspeed" class="fw-bold small">145 km/h</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-2 glass-panel">
+                <div class="text-muted small" style="font-size: 0.7rem;">KERB WEIGHT</div>
+                <div id="detail-spec-weight" class="fw-bold small">142 kg</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="p-2 glass-panel">
+                <div class="text-muted small" style="font-size: 0.7rem;">MAX TORQUE</div>
+                <div id="detail-spec-torque" class="fw-bold small">14.2 Nm</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <button id="detail-wishlist-btn" class="btn-moto-outline flex-grow-1">
+              <i class="bi bi-heart me-1"></i> Wishlist
+            </button>
+            <button id="detail-compare-btn" class="btn-moto-primary flex-grow-1">
+              <i class="bi bi-arrow-left-right me-1"></i> Compare Bike
+            </button>
+          </div>
+
+          <button class="btn btn-outline-secondary w-100 rounded-3 py-2 small text-muted hover:text-white" data-bs-toggle="modal" data-bs-target="#testRideModal">
+            <i class="bi bi-calendar-check me-2"></i> Book a Dealer Test Ride
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DETAILED SPECS & FEATURES ==================== -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        
+        <!-- LEFT: SPECS ACCORDION / FULL MATRIX -->
+        <div class="col-12 col-lg-8">
+          <div class="mb-4">
+            <h3 class="fw-bold fs-3 mb-2">Technical Specifications</h3>
+            <p id="detail-desc" class="text-muted small mb-4">Comprehensive engineering telemetry verified against factory service documentation.</p>
+          </div>
+
+          <div class="specs-table-container p-4" id="detail-full-specs-table">
+            <!-- Injected via script.js -->
+          </div>
+
+          <!-- KEY FEATURES GRID -->
+          <div class="mt-5">
+            <h4 class="fw-bold fs-4 mb-3"><i class="bi bi-stars text-accent me-2"></i> Key Features & Equipment</h4>
+            <div class="row g-2" id="detail-features-list">
+              <!-- Injected via script.js -->
+            </div>
+          </div>
+
+          <!-- PROS & CONS SECTION -->
+          <div class="mt-5">
+            <h4 class="fw-bold fs-4 mb-3"><i class="bi bi-shield-shaded text-accent me-2"></i> Expert Pros & Cons Verdict</h4>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <div class="glass-card p-4 h-100 border-start border-emerald border-4">
+                  <h5 class="fw-bold text-emerald mb-3"><i class="bi bi-hand-thumbs-up-fill me-2"></i> What We Like (Pros)</h5>
+                  <ul class="list-unstyled mb-0" id="detail-pros-list">
+                    <!-- Injected via script.js -->
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="glass-card p-4 h-100 border-start border-danger border-4">
+                  <h5 class="fw-bold text-danger mb-3"><i class="bi bi-hand-thumbs-down-fill me-2"></i> Room for Improvement (Cons)</h5>
+                  <ul class="list-unstyled mb-0" id="detail-cons-list">
+                    <!-- Injected via script.js -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: INTERACTIVE EMI CALCULATOR & TOOLS -->
+        <div class="col-12 col-lg-4">
+          
+          <!-- EMI Calculator Card -->
+          <div class="glass-panel p-4 mb-4 sticky-top" style="top: calc(var(--navbar-height) + 20px);">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <i class="bi bi-calculator text-accent fs-4"></i>
+              <h5 class="fw-bold mb-0">Interactive EMI Calculator</h5>
+            </div>
+            <p class="text-muted small mb-4">Calculate estimated monthly installments based on your loan amount, interest rate, and tenure.</p>
+
+            <!-- Loan Amount Slider -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <label class="small text-muted text-uppercase fw-bold" style="font-size: 0.72rem;">Loan Amount</label>
+                <span id="emi-loan-val" class="text-accent fw-bold small">₹1,50,000</span>
+              </div>
+              <input type="range" id="emi-loan-slider" class="custom-range-slider" min="20000" max="3000000" step="5000" value="150000">
+            </div>
+
+            <!-- Interest Rate Slider -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <label class="small text-muted text-uppercase fw-bold" style="font-size: 0.72rem;">Interest Rate (% p.a.)</label>
+                <span id="emi-rate-val" class="text-cyan fw-bold small">9.5%</span>
+              </div>
+              <input type="range" id="emi-rate-slider" class="custom-range-slider" min="6.0" max="18.0" step="0.25" value="9.5">
+            </div>
+
+            <!-- Tenure Slider -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <label class="small text-muted text-uppercase fw-bold" style="font-size: 0.72rem;">Loan Tenure</label>
+                <span id="emi-tenure-val" class="text-emerald fw-bold small">36 Months (3.0 Yrs)</span>
+              </div>
+              <input type="range" id="emi-tenure-slider" class="custom-range-slider" min="12" max="60" step="6" value="36">
+            </div>
+
+            <!-- Calculated Output Box -->
+            <div class="p-3 glass-card text-center rounded-3 mb-3" style="background: rgba(225, 29, 72, 0.08); border-color: rgba(225, 29, 72, 0.2);">
+              <div class="text-muted small text-uppercase fw-bold" style="font-size: 0.72rem;">Estimated Monthly EMI</div>
+              <div id="emi-monthly-output" class="fs-2 fw-bold text-accent">₹4,805</div>
+            </div>
+
+            <div class="d-flex justify-content-between small text-muted py-1 border-bottom border-secondary border-opacity-25">
+              <span>Total Interest:</span>
+              <span id="emi-interest-output" class="fw-bold text-main">₹22,980</span>
+            </div>
+            <div class="d-flex justify-content-between small text-muted py-1 mt-1">
+              <span>Total Amount Payable:</span>
+              <span id="emi-total-output" class="fw-bold text-main">₹1,72,980</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SIMILAR BIKES ==================== -->
+  <section class="py-5 bg-surface-custom border-top border-secondary border-opacity-10">
+    <div class="container">
+      <div class="mb-4 pb-2 border-bottom border-secondary border-opacity-25">
+        <h3 class="fw-bold fs-2 mb-1">Similar & Recommended Bikes</h3>
+        <p class="text-muted small mb-0">Riders who viewed this model also compared the following alternatives.</p>
+      </div>
+
+      <div class="row g-4" id="detail-related-bikes">
+        <!-- Injected via script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEST RIDE MODAL ==================== -->
+  <div class="modal fade" id="testRideModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-surface text-main border-secondary">
+        <div class="modal-header border-secondary border-opacity-25">
+          <h5 class="modal-title fw-bold"><i class="bi bi-calendar-check text-accent me-2"></i> Book a Dealership Test Ride</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="test-ride-form" onsubmit="event.preventDefault(); bootstrap.Modal.getInstance(document.getElementById('testRideModal')).hide(); MotoApp.showToast('Test ride request booked! The authorized dealer will call you within 24 hours.', 'success');">
+            <div class="mb-3">
+              <label class="form-label small text-muted">Your Name</label>
+              <input type="text" class="form-control bg-input text-main border-secondary" required placeholder="e.g. Rahul Verma">
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Mobile Number</label>
+              <input type="tel" class="form-control bg-input text-main border-secondary" required placeholder="+91 98765 43210">
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">City / Pincode</label>
+              <input type="text" class="form-control bg-input text-main border-secondary" required placeholder="e.g. Bangalore, 560001">
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Preferred Date</label>
+              <input type="date" class="form-control bg-input text-main border-secondary" required>
+            </div>
+            <button type="submit" class="btn-moto-primary w-100 mt-2">Confirm Test Ride Booking</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="motoverse-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-12 col-lg-4">
+          <a class="navbar-brand navbar-brand-logo mb-3 d-inline-flex" href="index.html">
+            <div class="brand-icon-flame">
+              <i class="bi bi-speedometer"></i>
+            </div>
+            <span>Moto<span class="text-accent">Verse</span></span>
+          </a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            The premier digital motorcycle discovery and comparison platform. Grounded in technical accuracy, rider telemetry, and pure two-wheel passion.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-link-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore Bikes</a></li>
+            <li><a href="compare.html">Compare Matrix</a></li>
+            <li><a href="brands.html">All Brands</a></li>
+            <li><a href="reviews.html">Rider Reviews</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h5 class="footer-heading">Bike Categories</h5>
+          <ul class="footer-link-list">
+            <li><a href="explore.html?category=Sports">Sports Bikes</a></li>
+            <li><a href="explore.html?category=Naked">Naked Streetfighters</a></li>
+            <li><a href="explore.html?category=Cruiser">Power Cruisers</a></li>
+            <li><a href="explore.html?category=Adventure">Adventure Tourers</a></li>
+            <li><a href="explore.html?category=Superbike">Liter-Class Superbikes</a></li>
+            <li><a href="explore.html?category=Commuter">Mileage Commuters</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-heading">Popular Brands</h5>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <a href="explore.html?brand=Yamaha" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Yamaha</a>
+            <a href="explore.html?brand=Kawasaki" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Kawasaki</a>
+            <a href="explore.html?brand=KTM" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">KTM</a>
+            <a href="explore.html?brand=Royal%20Enfield" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Royal Enfield</a>
+            <a href="explore.html?brand=BMW" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">BMW Motorrad</a>
+            <a href="explore.html?brand=Ducati" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Ducati</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 border-top border-secondary border-opacity-25 d-flex flex-column flex-md-row align-items-center justify-content-between text-muted small gap-3">
+        <div>&copy; 2026 MotoVerse. Built for passionate motorcycle enthusiasts.</div>
+        <div class="d-flex gap-4">
+          <a href="#" class="text-muted hover:text-white">Privacy Policy</a>
+          <a href="#" class="text-muted hover:text-white">Terms of Service</a>
+          <a href="#" class="text-muted hover:text-white">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== QUICK SEARCH MODAL (Ctrl+K) ==================== -->
+  <div id="quickSearchBackdrop" class="search-modal-backdrop">
+    <div class="search-modal-dialog">
+      <div class="search-input-header">
+        <i class="bi bi-search text-accent fs-5"></i>
+        <input type="text" id="quickSearchInput" class="search-input-field" placeholder="Search by bike model, brand, or category...">
+        <span class="badge bg-surface-elevated text-muted small">ESC</span>
+      </div>
+      <div id="quickSearchResults" class="search-results-list"></div>
+    </div>
+  </div>
+
+  <!-- ==================== WISHLIST MODAL ==================== -->
+  <div class="modal fade" id="wishlistModal" tabindex="-1" aria-labelledby="wishlistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-surface text-main border-secondary">
+        <div class="modal-header border-secondary border-opacity-25">
+          <h5 class="modal-title fw-bold" id="wishlistModalLabel">
+            <i class="bi bi-heart-fill text-danger me-2"></i> Saved Wishlist Bikes
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="wishlistModalItems"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" title="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Bikes – Side-by-Side Specifications Matrix | MotoVerse</title>
+  <meta name="description" content="Compare two or three motorcycles side-by-side. Benchmark horsepower, torque, mileage, braking hardware, kerb weight and prices with auto-calculated winner highlights.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏍️</text></svg>">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false }
+    }
+  </script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="compare-page-root">
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <nav class="navbar navbar-expand-lg motoverse-navbar">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-logo" href="index.html">
+        <div class="brand-icon-flame">
+          <i class="bi bi-speedometer"></i>
+        </div>
+        <span>Moto<span class="text-accent">Verse</span></span>
+      </a>
+
+      <!-- Right mobile action triggers -->
+      <div class="d-flex align-items-center gap-2 d-lg-none order-lg-3">
+        <button class="btn-icon-square search-modal-trigger" title="Search">
+          <i class="bi bi-search"></i>
+        </button>
+        <button class="btn-icon-square wishlist-modal-trigger position-relative" title="Wishlist">
+          <i class="bi bi-heart"></i>
+          <span class="nav-badge-count nav-wishlist-count" style="display: none;">0</span>
+        </button>
+        <button class="btn-icon-square theme-toggle-btn" title="Toggle Theme">
+          <i class="bi bi-sun-fill text-amber"></i>
+        </button>
+        <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#motoNavbar" aria-controls="motoNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="motoNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="explore.html">Explore Bikes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" href="compare.html">Compare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="brands.html">Brands</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="reviews.html">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="about.html">About</a>
+          </li>
+        </ul>
+
+        <!-- Desktop Action Controls -->
+        <div class="d-none d-lg-flex align-items-center gap-2">
+          <button class="btn-icon-square search-modal-trigger" title="Quick Search (Ctrl+K)">
+            <i class="bi bi-search"></i>
+          </button>
+          
+          <button class="btn-icon-square wishlist-modal-trigger position-relative" title="Wishlist Saved Bikes">
+            <i class="bi bi-heart"></i>
+            <span class="nav-badge-count nav-wishlist-count" style="display: none;">0</span>
+          </button>
+
+          <a href="compare.html" class="btn-icon-square position-relative" title="Bike Comparison Matrix">
+            <i class="bi bi-arrow-left-right"></i>
+            <span class="nav-badge-count nav-compare-count" style="display: none;">0</span>
+          </a>
+
+          <button class="btn-icon-square theme-toggle-btn" title="Toggle Light/Dark Theme">
+            <i class="bi bi-sun-fill text-amber"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HEADER BANNER ==================== -->
+  <section class="py-4 bg-surface-custom border-bottom border-secondary border-opacity-10">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
+          <li class="breadcrumb-item active text-accent" aria-current="page">Compare Bikes</li>
+        </ol>
+      </nav>
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+        <div>
+          <h1 class="fw-bold fs-2 mb-1">Bike Comparison Matrix</h1>
+          <p class="text-muted small mb-0">Select up to 3 motorcycles to benchmark technical telemetry, dimensions, power outputs, and pricing.</p>
+        </div>
+
+        <!-- Controls (Highlight Winner & Diff only) -->
+        <div class="d-flex align-items-center gap-3">
+          <div class="form-check form-switch mb-0">
+            <input class="form-check-input" type="checkbox" id="compare-highlight-winner-toggle" checked>
+            <label class="form-check-label small text-muted text-nowrap" for="compare-highlight-winner-toggle">
+              <i class="bi bi-trophy text-emerald me-1"></i> Highlight Best Spec
+            </label>
+          </div>
+          <div class="form-check form-switch mb-0">
+            <input class="form-check-input" type="checkbox" id="compare-diff-only-toggle">
+            <label class="form-check-label small text-muted text-nowrap" for="compare-diff-only-toggle">
+              Differences Only
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BIKE SELECTORS ==================== -->
+  <section class="py-4">
+    <div class="container">
+      
+      <!-- Selection Dropdown Bars -->
+      <div class="glass-panel p-4 mb-4">
+        <div class="row g-3">
+          <div class="col-12 col-md-4">
+            <label class="small text-muted text-uppercase fw-bold mb-1" style="font-size: 0.72rem;">Slot 1: First Bike</label>
+            <select id="compare-select-1" class="form-select bg-surface-elevated text-main border-secondary border-opacity-25 rounded-3">
+              <!-- Populated via script.js -->
+            </select>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label class="small text-muted text-uppercase fw-bold mb-1" style="font-size: 0.72rem;">Slot 2: Second Bike</label>
+            <select id="compare-select-2" class="form-select bg-surface-elevated text-main border-secondary border-opacity-25 rounded-3">
+              <!-- Populated via script.js -->
+            </select>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label class="small text-muted text-uppercase fw-bold mb-1" style="font-size: 0.72rem;">Slot 3: Third Bike (Optional)</label>
+            <select id="compare-select-3" class="form-select bg-surface-elevated text-main border-secondary border-opacity-25 rounded-3">
+              <!-- Populated via script.js -->
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Preset Head-to-Head Comparisons -->
+      <div class="d-flex align-items-center gap-2 flex-wrap mb-4 pb-2">
+        <span class="text-muted small fw-bold text-uppercase">Popular Matchups:</span>
+        <a href="compare.html?bike1=yamaha-r15-v4&bike2=ktm-390-duke" class="badge rounded-pill bg-surface-elevated border border-secondary text-muted px-3 py-2 text-decoration-none">
+          R15 V4 vs 390 Duke
+        </a>
+        <a href="compare.html?bike1=royal-enfield-gt650&bike2=harley-iron-883" class="badge rounded-pill bg-surface-elevated border border-secondary text-muted px-3 py-2 text-decoration-none">
+          GT 650 vs Iron 883
+        </a>
+        <a href="compare.html?bike1=kawasaki-zx10r&bike2=bmw-s1000rr" class="badge rounded-pill bg-surface-elevated border border-secondary text-muted px-3 py-2 text-decoration-none">
+          Ninja ZX-10R vs BMW S1000RR
+        </a>
+        <a href="compare.html?bike1=royal-enfield-himalayan-450&bike2=triumph-tiger-900" class="badge rounded-pill bg-surface-elevated border border-secondary text-muted px-3 py-2 text-decoration-none">
+          Himalayan 450 vs Tiger 900
+        </a>
+      </div>
+
+      <!-- Comparison Dynamic Table Matrix -->
+      <div id="compare-matrix-container">
+        <!-- Injected via script.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="motoverse-footer">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-12 col-lg-4">
+          <a class="navbar-brand navbar-brand-logo mb-3 d-inline-flex" href="index.html">
+            <div class="brand-icon-flame">
+              <i class="bi bi-speedometer"></i>
+            </div>
+            <span>Moto<span class="text-accent">Verse</span></span>
+          </a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            The premier digital motorcycle discovery and comparison platform. Grounded in technical accuracy, rider telemetry, and pure two-wheel passion.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-link-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore Bikes</a></li>
+            <li><a href="compare.html">Compare Matrix</a></li>
+            <li><a href="brands.html">All Brands</a></li>
+            <li><a href="reviews.html">Rider Reviews</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h5 class="footer-heading">Bike Categories</h5>
+          <ul class="footer-link-list">
+            <li><a href="explore.html?category=Sports">Sports Bikes</a></li>
+            <li><a href="explore.html?category=Naked">Naked Streetfighters</a></li>
+            <li><a href="explore.html?category=Cruiser">Power Cruisers</a></li>
+            <li><a href="explore.html?category=Adventure">Adventure Tourers</a></li>
+            <li><a href="explore.html?category=Superbike">Liter-Class Superbikes</a></li>
+            <li><a href="explore.html?category=Commuter">Mileage Commuters</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-heading">Popular Brands</h5>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <a href="explore.html?brand=Yamaha" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Yamaha</a>
+            <a href="explore.html?brand=Kawasaki" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Kawasaki</a>
+            <a href="explore.html?brand=KTM" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">KTM</a>
+            <a href="explore.html?brand=Royal%20Enfield" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Royal Enfield</a>
+            <a href="explore.html?brand=BMW" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">BMW Motorrad</a>
+            <a href="explore.html?brand=Ducati" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Ducati</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 border-top border-secondary border-opacity-25 d-flex flex-column flex-md-row align-items-center justify-content-between text-muted small gap-3">
+        <div>&copy; 2026 MotoVerse. Built for passionate motorcycle enthusiasts.</div>
+        <div class="d-flex gap-4">
+          <a href="#" class="text-muted hover:text-white">Privacy Policy</a>
+          <a href="#" class="text-muted hover:text-white">Terms of Service</a>
+          <a href="#" class="text-muted hover:text-white">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== QUICK SEARCH MODAL (Ctrl+K) ==================== -->
+  <div id="quickSearchBackdrop" class="search-modal-backdrop">
+    <div class="search-modal-dialog">
+      <div class="search-input-header">
+        <i class="bi bi-search text-accent fs-5"></i>
+        <input type="text" id="quickSearchInput" class="search-input-field" placeholder="Search by bike model, brand, or category...">
+        <span class="badge bg-surface-elevated text-muted small">ESC</span>
+      </div>
+      <div id="quickSearchResults" class="search-results-list"></div>
+    </div>
+  </div>
+
+  <!-- ==================== WISHLIST MODAL ==================== -->
+  <div class="modal fade" id="wishlistModal" tabindex="-1" aria-labelledby="wishlistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-surface text-main border-secondary">
+        <div class="modal-header border-secondary border-opacity-25">
+          <h5 class="modal-title fw-bold" id="wishlistModalLabel">
+            <i class="bi bi-heart-fill text-danger me-2"></i> Saved Wishlist Bikes
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="wishlistModalItems"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" title="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
