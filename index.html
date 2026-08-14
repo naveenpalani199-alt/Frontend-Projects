@@ -1,19 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <section>
-        <h3>BOOTSTRAP</h3>
-        <div>
-           <nav>
-            <a href="BOOTSTRAP/Day1/">day1</a>
-           </nav>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naveen | Web Development Learning Hub & Tasks</title>
 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-body: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-subtle: #e2e8f0;
+      
+      /* Tech Accent Colors */
+      --html-color: #ea580c;
+      --html-bg: #fff7ed;
+      --css-color: #2563eb;
+      --css-bg: #eff6ff;
+      --bootstrap-color: #7c3aed;
+      --bootstrap-bg: #f5f3ff;
+      --tailwind-color: #0284c7;
+      --tailwind-bg: #f0f9ff;
+      --project-color: #059669;
+      --project-bg: #ecfdf5;
+
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --radius-sm: 6px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
+      --shadow-hover: 0 16px 30px -6px rgba(15, 23, 42, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hero Header */
+    header {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffffff;
+      padding: 48px 20px 40px;
+      text-align: center;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Controls Bar: Search & Filter */
+    .controls-wrapper {
+      width: 92%;
+      max-width: 1180px;
+      margin: -24px auto 24px;
+      z-index: 10;
+    }
+
+    .controls-card {
+      background: var(--card-bg);
+      padding: 16px 20px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 240px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 11px 16px 11px 40px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border-subtle);
+      font-size: 0.925rem;
+      background: #f8fafc;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: #2563eb;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      background: #f1f5f9;
+      color: #475569;
+      border: none;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      background: #e2e8f0;
+      color: var(--text-main);
+    }
+
+    .filter-btn.active {
+      background: #0f172a;
+      color: #ffffff;
+    }
+
+    /* Container Grid */
+    .container {
+      width: 92%;
+      max-width: 1180px;
+      margin: 10px auto 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      flex: 1;
+    }
+
+    /* Section Cards */
+    .module-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-subtle);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .module-card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tech-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .module-card[data-category="bootstrap"] .tech-icon { background: var(--bootstrap-bg); color: var(--bootstrap-color); }
+    .module-card[data-category="css"] .tech-icon { background: var(--css-bg); color: var(--css-color); }
+    .module-card[data-category="html"] .tech-icon { background: var(--html-bg); color: var(--html-color); }
+    .module-card[data-category="tailwind"] .tech-icon { background: var(--tailwind-bg); color: var(--tailwind-color); }
+    .module-card[data-category="article"] .tech-icon { background: var(--project-bg); color: var(--project-color); }
+
+    .module-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .count-badge {
+      font-size: 0.775rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #f1f5f9;
+      color: var(--text-muted);
+    }
+
+    .group-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* Navigation Links Grid */
+    nav.task-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+      gap: 10px;
+    }
+
+    nav.task-grid a {
+      text-decoration: none;
+      background: #ffffff;
+      color: #334155;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    nav.task-grid a:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Specific Tech Hover Styling */
+    .module-card[data-category="bootstrap"] nav a:hover { background: var(--bootstrap-color); border-color: var(--bootstrap-color); }
+    .module-card[data-category="css"] nav a:hover { background: var(--css-color); border-color: var(--css-color); }
+    .module-card[data-category="html"] nav a:hover { background: var(--html-color); border-color: var(--html-color); }
+    .module-card[data-category="tailwind"] nav a:hover { background: var(--tailwind-color); border-color: var(--tailwind-color); }
+    .module-card[data-category="article"] nav a:hover { background: var(--project-color); border-color: var(--project-color); }
+
+    /* Special Highlight Tag for Test/Projects */
+    nav.task-grid a.special-badge {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.85rem;
+      }
+      .controls-card {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-chips {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      nav.task-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Hero Header -->
+  <header>
+    <div class="header-badge">🚀 Frontend Track</div>
+    <h1>Daily Task Directory</h1>
+    <p>Comprehensive repository of daily exercises across HTML, CSS, Bootstrap, Tailwind CSS, and standalone projects.</p>
+  </header>
+
+  <!-- Filter & Search Controls -->
+  <div class="controls-wrapper">
+    <div class="controls-card">
+      <div class="search-box">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="taskSearch" placeholder="Search tasks, days, or modules..." oninput="filterTasks()" />
+      </div>
+      <div class="filter-chips">
+        <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+        <button class="filter-btn" onclick="setFilter('html', this)">HTML</button>
+        <button class="filter-btn" onclick="setFilter('css', this)">CSS</button>
+        <button class="filter-btn" onclick="setFilter('bootstrap', this)">Bootstrap</button>
+        <button class="filter-btn" onclick="setFilter('tailwind', this)">Tailwind</button>
+        <button class="filter-btn" onclick="setFilter('article', this)">Projects</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Tasks Container -->
+  <main class="container">
+
+    <!-- HTML Module -->
+    <section class="module-card" data-category="html">
+      <div class="card-header">
+        <div class="header-left">
+          <div class="tech-icon">5</div>
+          <h2 class="module-title">HTML5</h2>
         </div>
+        <span class="count-badge">11 Tasks</span>
+      </div>
+      <nav class="task-grid">
+        <a href="HTML/Day 1/company.html">Day 1</a>
+        <a href="HTML/Day 2/task5.html">Day 2</a>
+        <a href="HTML/Day 3/day3.html">Day 3</a>
+        <a href="HTML/Day4/task5.html">Day 4</a>
+        <a href="HTML/Day5/task2.1.html">Day 5</a>
+        <a href="HTML/Day6/form.html">Day 6</a>
+        <a href="HTML/Day7/student.html">Day 7</a>
+        <a href="HTML/Day8/task5.html">Day 8</a>
+        <a href="HTML/Day9/task5.html">Day 9</a>
+        <a href="HTML/Day9/task4.html">Day 9 - Task 4</a>
+        <a href="HTML/Day9/task3.html">Day 9 - Task 3</a>
+      </nav>
     </section>
+
+    <!-- CSS Module -->
+    <section class="module-card" data-category="css">
+      <div class="card-header">
+        <div class="header-left">
+          <div class="tech-icon">#</div>
+          <h2 class="module-title">CSS3 & Styling</h2>
+        </div>
+        <span class="count-badge">11 Tasks</span>
+      </div>
+      <nav class="task-grid">
+        <a href="CSS/Day1/challengetask.html">Day 1</a>
+        <a href="CSS/Day2/task6.html">Day 2</a>
+        <a href="CSS/Day3/challengetask.html">Day 3</a>
+        <a href="CSS/Day4/index.html">Day 4</a>
+        <a href="CSS/Day5/index.html">Day 5</a>
+        <a href="CSS/Day6/task5.html">Day 6</a>
+        <a href="CSS/Day7/task4.html">Day 7</a>
+        <a href="CSS/Day8/task5.html">Day 8</a>
+        <a href="CSS/Day9/task5.html">Day 9</a>
+        <a href="CSS/Day10/challenge.html">Day 10</a>
+        <a href="CSS/TEST/task5.html" class="special-badge">🎯 Test Task</a>
+      </nav>
+    </section>
+
+    <!-- Bootstrap Module -->
+    <section class="module-card" data-category="bootstrap">
+      <div class="card-header">
+        <div class="header-left">
+          <div class="tech-icon">B</div>
+          <h2 class="module-title">Bootstrap</h2>
+        </div>
+        <span class="count-badge">2 Tasks</span>
+      </div>
+      <nav class="task-grid">
+        <a href="BOOTSTRAP/Day1/">Day 1</a>
+        <a href="BOOTSTRAP/Day2/">Day 2</a>
+      </nav>
+    </section>
+
+    <!-- Tailwind CSS Module -->
+    <section class="module-card" data-category="tailwind">
+      <div class="card-header">
+        <div class="header-left">
+          <div class="tech-icon">~</div>
+          <h2 class="module-title">Tailwind CSS</h2>
+        </div>
+        <span class="count-badge">5 Tasks</span>
+      </div>
+      <span class="group-label">Day 1 Submissions</span>
+      <nav class="task-grid">
+        <a href="TAILWINDCSS/Day1/task1.html">Task 1</a>
+        <a href="TAILWINDCSS/Day1/task2.html">Task 2</a>
+        <a href="TAILWINDCSS/Day1/task3.html">Task 3</a>
+        <a href="TAILWINDCSS/Day1/task4.html">Task 4</a>
+        <a href="TAILWINDCSS/Day1/task5.html">Task 5</a>
+      </nav>
+    </section>
+
+    <!-- Article & Projects Module -->
+    <section class="module-card" data-category="article">
+      <div class="card-header">
+        <div class="header-left">
+          <div class="tech-icon">✦</div>
+          <h2 class="module-title">Articles & Projects</h2>
+        </div>
+        <span class="count-badge">1 Project</span>
+      </div>
+      <nav class="task-grid">
+        <a href="Article/index.html" style="grid-column: 1 / -1;">🌐 Launch My Site Project</a>
+      </nav>
+    </section>
+
+  </main>
+
+  <!-- Clean Footer -->
+  <footer>
+    <p>© 2026 <strong>Naveen</strong> • Crafted for Clean Code & Continuous Learning</p>
+  </footer>
+
+  <!-- Real-time Filter & Search Script -->
+  <script>
+    let activeFilter = 'all';
+
+    function setFilter(category, btnElement) {
+      activeFilter = category;
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+      filterTasks();
+    }
+
+    function filterTasks() {
+      const searchVal = document.getElementById('taskSearch').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.module-card');
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const matchesCategory = (activeFilter === 'all' || activeFilter === category);
+        const taskLinks = card.querySelectorAll('nav a');
+        let cardHasMatch = false;
+
+        taskLinks.forEach(link => {
+          const text = link.textContent.toLowerCase();
+          const href = link.getAttribute('href').toLowerCase();
+          const matchesSearch = text.includes(searchVal) || href.includes(searchVal) || category.includes(searchVal);
+
+          if (matchesSearch && matchesCategory) {
+            link.style.display = 'flex';
+            cardHasMatch = true;
+          } else if (searchVal !== '') {
+            link.style.display = 'none';
+          } else {
+            link.style.display = 'flex';
+          }
+        });
+
+        if (matchesCategory && (searchVal === '' || cardHasMatch)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
