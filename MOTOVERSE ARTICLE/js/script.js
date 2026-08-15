@@ -157,7 +157,7 @@ const MotoApp = {
 
     toast.innerHTML = `
       <i class="bi ${iconClass} fs-5"></i>
-      <div class="flex-grow-1" style="font-size: 0.9rem; font-weight: 500;">${message}</div>
+      <div class="flex-grow-1 text-white" style="font-size: 0.92rem; font-weight: 600;">${message}</div>
       <button type="button" class="btn-close btn-close-white ms-2" style="font-size: 0.7rem;" aria-label="Close"></button>
     `;
 
@@ -251,12 +251,12 @@ const MotoApp = {
           `).join('')}
         </div>
         <div class="d-none d-sm-block">
-          <div style="font-size: 0.82rem; font-weight: 700;">Comparing ${bikes.length} / 3 Bikes</div>
-          <div style="font-size: 0.72rem; color: var(--text-muted);">${bikes.map(b => b.name.split(' ')[0]).join(' vs ')}</div>
+          <div class="text-white fw-bold" style="font-size: 0.85rem;">Comparing ${bikes.length} / 3 Bikes</div>
+          <div class="text-muted" style="font-size: 0.75rem;">${bikes.map(b => b.name.split(' ')[0]).join(' vs ')}</div>
         </div>
       </div>
       <div class="d-flex align-items-center gap-2">
-        <a href="compare.html" class="btn-moto-primary py-2 px-3" style="font-size: 0.85rem;">
+        <a href="compare.html" class="btn-moto-primary py-2 px-3 text-white" style="font-size: 0.85rem;">
           <i class="bi bi-arrow-left-right"></i> Compare Now
         </a>
         <button class="btn btn-sm btn-outline-secondary text-white rounded-circle p-1" onclick="MotoApp.clearCompareList(event)" title="Clear All">
@@ -275,7 +275,7 @@ const MotoApp = {
     this.showToast('Cleared comparison list', 'info');
   },
 
-  // Wishlist Modal / Offcanvas
+  // Wishlist Modal
   initWishlistModal() {
     const trigger = document.querySelectorAll('.wishlist-modal-trigger');
     trigger.forEach(t => {
@@ -298,7 +298,7 @@ const MotoApp = {
           <div class="why-icon-box mx-auto mb-3" style="width: 60px; height: 60px;">
             <i class="bi bi-heart fs-3"></i>
           </div>
-          <h5 class="fw-bold mb-2">Your Wishlist is Empty</h5>
+          <h5 class="fw-bold text-white mb-2">Your Wishlist is Empty</h5>
           <p class="text-muted small mb-4">Explore our motorcycle lineup and save your dream rides for quick access.</p>
           <a href="explore.html" class="btn-moto-primary" data-bs-dismiss="modal">Explore Bikes</a>
         </div>
@@ -314,11 +314,11 @@ const MotoApp = {
             <div class="p-3 glass-card d-flex align-items-center justify-content-between gap-3">
               <img src="${b.primaryImage}" alt="${b.name}" class="rounded" style="width: 70px; height: 50px; object-fit: cover;">
               <div class="flex-grow-1">
-                <div class="fw-bold" style="font-size: 0.95rem;">${b.name}</div>
+                <div class="fw-bold text-white" style="font-size: 0.95rem;">${b.name}</div>
                 <div class="text-accent fw-bold small">${b.priceFormatted} <span class="text-muted fw-normal ms-2">${b.engine.displacementFormatted}</span></div>
               </div>
               <div class="d-flex gap-2">
-                <a href="details.html?id=${b.id}" class="btn btn-sm btn-outline-secondary rounded-pill px-3" style="font-size: 0.78rem;">View</a>
+                <a href="details.html?id=${b.id}" class="btn btn-sm btn-outline-light rounded-pill px-3" style="font-size: 0.78rem;">View</a>
                 <button class="btn btn-sm btn-outline-danger rounded-circle p-1" onclick="MotoApp.toggleWishlist('${b.id}', event)">
                   <i class="bi bi-trash"></i>
                 </button>
@@ -390,7 +390,7 @@ const MotoApp = {
         <div class="search-result-item" onclick="window.location.href='details.html?id=${b.id}'">
           <img src="${b.primaryImage}" alt="${b.name}" style="width: 54px; height: 38px; object-fit: cover; border-radius: 6px;">
           <div class="flex-grow-1">
-            <div class="fw-bold" style="font-size: 0.9rem;">${b.name}</div>
+            <div class="fw-bold text-white" style="font-size: 0.9rem;">${b.name}</div>
             <div class="small text-muted">${b.brand} &bull; ${b.category} &bull; ${b.engine.displacementFormatted}</div>
           </div>
           <div class="fw-bold text-accent" style="font-size: 0.9rem;">${b.priceFormatted}</div>
@@ -442,7 +442,7 @@ const MotoApp = {
           <div class="col-6 col-md-4 col-lg-3">
             <a href="explore.html?brand=${encodeURIComponent(br.name)}" class="brand-card">
               <div class="brand-logo-pill">${br.logoText}</div>
-              <h5 class="fw-bold mb-1" style="font-size: 1.1rem;">${br.name}</h5>
+              <h5 class="fw-bold text-white mb-1" style="font-size: 1.1rem;">${br.name}</h5>
               <div class="text-muted small">${count} Model${count === 1 ? '' : 's'} Available</div>
             </a>
           </div>
@@ -553,7 +553,7 @@ const MotoApp = {
 
       // Render
       if (countDisplay) {
-        countDisplay.innerHTML = `Showing <strong>${filtered.length}</strong> of ${MOTO_BIKES.length} Bikes`;
+        countDisplay.innerHTML = `Showing <strong class="text-white">${filtered.length}</strong> of ${MOTO_BIKES.length} Bikes`;
       }
 
       if (filtered.length === 0) {
@@ -562,7 +562,7 @@ const MotoApp = {
             <div class="why-icon-box mx-auto mb-3">
               <i class="bi bi-search fs-3"></i>
             </div>
-            <h4 class="fw-bold mb-2">No Matching Bikes Found</h4>
+            <h4 class="fw-bold text-white mb-2">No Matching Bikes Found</h4>
             <p class="text-muted small mb-4">Try adjusting your filters or price range to discover available models.</p>
             <button class="btn-moto-primary" id="empty-reset-btn">Reset All Filters</button>
           </div>
@@ -780,7 +780,7 @@ const MotoApp = {
         <div class="col-12 col-md-6 mb-2">
           <div class="d-flex align-items-center gap-2 p-2 glass-card rounded-3">
             <i class="bi bi-check2-circle text-emerald fs-5"></i>
-            <span style="font-size: 0.9rem; font-weight: 500;">${f}</span>
+            <span class="text-white" style="font-size: 0.9rem; font-weight: 600;">${f}</span>
           </div>
         </div>
       `).join('');
@@ -790,7 +790,7 @@ const MotoApp = {
     const prosList = document.getElementById('detail-pros-list');
     if (prosList && bike.pros) {
       prosList.innerHTML = bike.pros.map(p => `
-        <li class="mb-2 d-flex align-items-start gap-2">
+        <li class="mb-2 d-flex align-items-start gap-2 text-white">
           <i class="bi bi-plus-circle-fill text-emerald mt-1"></i>
           <span>${p}</span>
         </li>
@@ -800,7 +800,7 @@ const MotoApp = {
     const consList = document.getElementById('detail-cons-list');
     if (consList && bike.cons) {
       consList.innerHTML = bike.cons.map(c => `
-        <li class="mb-2 d-flex align-items-start gap-2">
+        <li class="mb-2 d-flex align-items-start gap-2 text-white">
           <i class="bi bi-dash-circle-fill text-danger mt-1"></i>
           <span>${c}</span>
         </li>
@@ -815,14 +815,14 @@ const MotoApp = {
           <h5 class="fw-bold text-accent mb-3"><i class="bi bi-gear-wide-connected me-2"></i> Engine & Transmission</h5>
           <table class="table-custom">
             <tbody>
-              <tr><td class="text-muted" style="width: 40%;">Displacement</td><td class="fw-bold">${bike.engine.displacementFormatted}</td></tr>
-              <tr><td class="text-muted">Max Power</td><td class="fw-bold">${bike.engine.maxPowerFormatted}</td></tr>
-              <tr><td class="text-muted">Max Torque</td><td class="fw-bold">${bike.engine.maxTorqueFormatted}</td></tr>
-              <tr><td class="text-muted">No. of Cylinders</td><td class="fw-bold">${bike.engine.cylinders}</td></tr>
-              <tr><td class="text-muted">Valves per Cylinder</td><td class="fw-bold">${bike.engine.valves}</td></tr>
-              <tr><td class="text-muted">Cooling System</td><td class="fw-bold">${bike.engine.cooling}</td></tr>
-              <tr><td class="text-muted">Fuel Delivery System</td><td class="fw-bold">${bike.engine.fuelSystem}</td></tr>
-              <tr><td class="text-muted">Transmission & Clutch</td><td class="fw-bold">${bike.engine.transmission}</td></tr>
+              <tr><td class="text-muted" style="width: 40%;">Displacement</td><td class="fw-bold text-white">${bike.engine.displacementFormatted}</td></tr>
+              <tr><td class="text-muted">Max Power</td><td class="fw-bold text-white">${bike.engine.maxPowerFormatted}</td></tr>
+              <tr><td class="text-muted">Max Torque</td><td class="fw-bold text-white">${bike.engine.maxTorqueFormatted}</td></tr>
+              <tr><td class="text-muted">No. of Cylinders</td><td class="fw-bold text-white">${bike.engine.cylinders}</td></tr>
+              <tr><td class="text-muted">Valves per Cylinder</td><td class="fw-bold text-white">${bike.engine.valves}</td></tr>
+              <tr><td class="text-muted">Cooling System</td><td class="fw-bold text-white">${bike.engine.cooling}</td></tr>
+              <tr><td class="text-muted">Fuel Delivery System</td><td class="fw-bold text-white">${bike.engine.fuelSystem}</td></tr>
+              <tr><td class="text-muted">Transmission & Clutch</td><td class="fw-bold text-white">${bike.engine.transmission}</td></tr>
             </tbody>
           </table>
         </div>
@@ -831,13 +831,13 @@ const MotoApp = {
           <h5 class="fw-bold text-accent mb-3"><i class="bi bi-speedometer2 me-2"></i> Performance & Dimensions</h5>
           <table class="table-custom">
             <tbody>
-              <tr><td class="text-muted" style="width: 40%;">Top Speed</td><td class="fw-bold">${bike.performance.topSpeedFormatted}</td></tr>
-              <tr><td class="text-muted">0-60 km/h Acceleration</td><td class="fw-bold">${bike.performance.accel0to60Formatted}</td></tr>
-              <tr><td class="text-muted">Certified Mileage</td><td class="fw-bold">${bike.performance.mileageFormatted}</td></tr>
-              <tr><td class="text-muted">Fuel Tank Capacity</td><td class="fw-bold">${bike.performance.fuelCapacityFormatted}</td></tr>
-              <tr><td class="text-muted">Kerb Weight</td><td class="fw-bold">${bike.performance.kerbWeightFormatted}</td></tr>
-              <tr><td class="text-muted">Seat Height</td><td class="fw-bold">${bike.performance.seatHeightFormatted}</td></tr>
-              <tr><td class="text-muted">Ground Clearance</td><td class="fw-bold">${bike.performance.groundClearanceFormatted}</td></tr>
+              <tr><td class="text-muted" style="width: 40%;">Top Speed</td><td class="fw-bold text-white">${bike.performance.topSpeedFormatted}</td></tr>
+              <tr><td class="text-muted">0-60 km/h Acceleration</td><td class="fw-bold text-white">${bike.performance.accel0to60Formatted}</td></tr>
+              <tr><td class="text-muted">Certified Mileage</td><td class="fw-bold text-white">${bike.performance.mileageFormatted}</td></tr>
+              <tr><td class="text-muted">Fuel Tank Capacity</td><td class="fw-bold text-white">${bike.performance.fuelCapacityFormatted}</td></tr>
+              <tr><td class="text-muted">Kerb Weight</td><td class="fw-bold text-white">${bike.performance.kerbWeightFormatted}</td></tr>
+              <tr><td class="text-muted">Seat Height</td><td class="fw-bold text-white">${bike.performance.seatHeightFormatted}</td></tr>
+              <tr><td class="text-muted">Ground Clearance</td><td class="fw-bold text-white">${bike.performance.groundClearanceFormatted}</td></tr>
             </tbody>
           </table>
         </div>
@@ -846,13 +846,13 @@ const MotoApp = {
           <h5 class="fw-bold text-accent mb-3"><i class="bi bi-shield-check me-2"></i> Brakes, Suspension & Wheels</h5>
           <table class="table-custom">
             <tbody>
-              <tr><td class="text-muted" style="width: 40%;">ABS System</td><td class="fw-bold">${bike.brakesSuspension.absType}</td></tr>
-              <tr><td class="text-muted">Front Brake</td><td class="fw-bold">${bike.brakesSuspension.frontBrake}</td></tr>
-              <tr><td class="text-muted">Rear Brake</td><td class="fw-bold">${bike.brakesSuspension.rearBrake}</td></tr>
-              <tr><td class="text-muted">Front Suspension</td><td class="fw-bold">${bike.brakesSuspension.frontSuspension}</td></tr>
-              <tr><td class="text-muted">Rear Suspension</td><td class="fw-bold">${bike.brakesSuspension.rearSuspension}</td></tr>
-              <tr><td class="text-muted">Front Tyre</td><td class="fw-bold">${bike.brakesSuspension.frontTyre}</td></tr>
-              <tr><td class="text-muted">Rear Tyre</td><td class="fw-bold">${bike.brakesSuspension.rearTyre}</td></tr>
+              <tr><td class="text-muted" style="width: 40%;">ABS System</td><td class="fw-bold text-white">${bike.brakesSuspension.absType}</td></tr>
+              <tr><td class="text-muted">Front Brake</td><td class="fw-bold text-white">${bike.brakesSuspension.frontBrake}</td></tr>
+              <tr><td class="text-muted">Rear Brake</td><td class="fw-bold text-white">${bike.brakesSuspension.rearBrake}</td></tr>
+              <tr><td class="text-muted">Front Suspension</td><td class="fw-bold text-white">${bike.brakesSuspension.frontSuspension}</td></tr>
+              <tr><td class="text-muted">Rear Suspension</td><td class="fw-bold text-white">${bike.brakesSuspension.rearSuspension}</td></tr>
+              <tr><td class="text-muted">Front Tyre</td><td class="fw-bold text-white">${bike.brakesSuspension.frontTyre}</td></tr>
+              <tr><td class="text-muted">Rear Tyre</td><td class="fw-bold text-white">${bike.brakesSuspension.rearTyre}</td></tr>
             </tbody>
           </table>
         </div>
@@ -861,12 +861,12 @@ const MotoApp = {
           <h5 class="fw-bold text-accent mb-3"><i class="bi bi-cpu me-2"></i> Electricals & Advanced Tech</h5>
           <table class="table-custom">
             <tbody>
-              <tr><td class="text-muted" style="width: 40%;">Headlight</td><td class="fw-bold">${bike.electricals.headlight}</td></tr>
-              <tr><td class="text-muted">Instrument Console</td><td class="fw-bold">${bike.electricals.display}</td></tr>
-              <tr><td class="text-muted">Bluetooth Connectivity</td><td class="fw-bold">${bike.electricals.bluetooth}</td></tr>
-              <tr><td class="text-muted">Riding Modes</td><td class="fw-bold">${bike.electricals.ridingModes}</td></tr>
-              <tr><td class="text-muted">Quickshifter</td><td class="fw-bold">${bike.electricals.quickshifter}</td></tr>
-              <tr><td class="text-muted">Traction Control</td><td class="fw-bold">${bike.electricals.tractionControl}</td></tr>
+              <tr><td class="text-muted" style="width: 40%;">Headlight</td><td class="fw-bold text-white">${bike.electricals.headlight}</td></tr>
+              <tr><td class="text-muted">Instrument Console</td><td class="fw-bold text-white">${bike.electricals.display}</td></tr>
+              <tr><td class="text-muted">Bluetooth Connectivity</td><td class="fw-bold text-white">${bike.electricals.bluetooth}</td></tr>
+              <tr><td class="text-muted">Riding Modes</td><td class="fw-bold text-white">${bike.electricals.ridingModes}</td></tr>
+              <tr><td class="text-muted">Quickshifter</td><td class="fw-bold text-white">${bike.electricals.quickshifter}</td></tr>
+              <tr><td class="text-muted">Traction Control</td><td class="fw-bold text-white">${bike.electricals.tractionControl}</td></tr>
             </tbody>
           </table>
         </div>
@@ -979,7 +979,7 @@ const MotoApp = {
           tableContainer.innerHTML = `
             <div class="text-center py-5 glass-panel">
               <i class="bi bi-arrow-left-right text-accent display-4 mb-3"></i>
-              <h4 class="fw-bold">Select At Least 2 Bikes to Compare</h4>
+              <h4 class="fw-bold text-white">Select At Least 2 Bikes to Compare</h4>
               <p class="text-muted">Use the dropdowns above to select two or three motorcycles side-by-side.</p>
             </div>
           `;
@@ -992,59 +992,59 @@ const MotoApp = {
 
       // Smart Winner Evaluator
       const getWinnerClass = (key, bikeItem) => {
-        if (!showWinner) return '';
-        if (activeBikes.length < 2) return '';
+        if (!showWinner) return 'text-white';
+        if (activeBikes.length < 2) return 'text-white';
 
         if (key === 'price') {
           const minPrice = Math.min(...activeBikes.map(b => b.price));
-          return bikeItem.price === minPrice ? 'text-emerald fw-bold' : '';
+          return bikeItem.price === minPrice ? 'text-emerald fw-bold' : 'text-white';
         } else if (key === 'power') {
           const maxPower = Math.max(...activeBikes.map(b => b.engine.maxPower));
-          return bikeItem.engine.maxPower === maxPower ? 'text-emerald fw-bold' : '';
+          return bikeItem.engine.maxPower === maxPower ? 'text-emerald fw-bold' : 'text-white';
         } else if (key === 'torque') {
           const maxTorque = Math.max(...activeBikes.map(b => b.engine.maxTorque));
-          return bikeItem.engine.maxTorque === maxTorque ? 'text-emerald fw-bold' : '';
+          return bikeItem.engine.maxTorque === maxTorque ? 'text-emerald fw-bold' : 'text-white';
         } else if (key === 'displacement') {
           const maxDisplacement = Math.max(...activeBikes.map(b => b.engine.displacement));
-          return bikeItem.engine.displacement === maxDisplacement ? 'text-emerald fw-bold' : '';
+          return bikeItem.engine.displacement === maxDisplacement ? 'text-emerald fw-bold' : 'text-white';
         } else if (key === 'topSpeed') {
           const maxSpeed = Math.max(...activeBikes.map(b => b.performance.topSpeed));
-          return bikeItem.performance.topSpeed === maxSpeed ? 'text-emerald fw-bold' : '';
+          return bikeItem.performance.topSpeed === maxSpeed ? 'text-emerald fw-bold' : 'text-white';
         } else if (key === 'mileage') {
           const maxMileage = Math.max(...activeBikes.map(b => b.performance.mileage));
-          return bikeItem.performance.mileage === maxMileage ? 'text-emerald fw-bold' : '';
+          return bikeItem.performance.mileage === maxMileage ? 'text-emerald fw-bold' : 'text-white';
         } else if (key === 'weight') {
           const minWeight = Math.min(...activeBikes.map(b => b.performance.kerbWeight));
-          return bikeItem.performance.kerbWeight === minWeight ? 'text-emerald fw-bold' : '';
+          return bikeItem.performance.kerbWeight === minWeight ? 'text-emerald fw-bold' : 'text-white';
         } else if (key === 'fuelCapacity') {
           const maxTank = Math.max(...activeBikes.map(b => b.performance.fuelCapacity));
-          return bikeItem.performance.fuelCapacity === maxTank ? 'text-emerald fw-bold' : '';
+          return bikeItem.performance.fuelCapacity === maxTank ? 'text-emerald fw-bold' : 'text-white';
         }
-        return '';
+        return 'text-white';
       };
 
       const winnerBadge = '<span class="compare-winner-badge"><i class="bi bi-trophy-fill"></i> Best</span>';
 
       const specsRows = [
         { label: 'Ex-Showroom Price', key: 'price', render: (b) => `<span class="${getWinnerClass('price', b)}">${b.priceFormatted} ${getWinnerClass('price', b).includes('emerald') ? winnerBadge : ''}</span>` },
-        { label: 'Category / Style', key: 'category', render: (b) => `<span class="badge bg-secondary">${b.category}</span>` },
+        { label: 'Category / Style', key: 'category', render: (b) => `<span class="badge bg-secondary text-white">${b.category}</span>` },
         { label: 'Engine Displacement', key: 'displacement', render: (b) => `<span class="${getWinnerClass('displacement', b)}">${b.engine.displacementFormatted} ${getWinnerClass('displacement', b).includes('emerald') ? winnerBadge : ''}</span>` },
         { label: 'Max Power', key: 'power', render: (b) => `<span class="${getWinnerClass('power', b)}">${b.engine.maxPowerFormatted} ${getWinnerClass('power', b).includes('emerald') ? winnerBadge : ''}</span>` },
         { label: 'Max Torque', key: 'torque', render: (b) => `<span class="${getWinnerClass('torque', b)}">${b.engine.maxTorqueFormatted} ${getWinnerClass('torque', b).includes('emerald') ? winnerBadge : ''}</span>` },
         { label: 'Mileage / Fuel Economy', key: 'mileage', render: (b) => `<span class="${getWinnerClass('mileage', b)}">${b.performance.mileageFormatted} ${getWinnerClass('mileage', b).includes('emerald') ? winnerBadge : ''}</span>` },
         { label: 'Top Speed', key: 'topSpeed', render: (b) => `<span class="${getWinnerClass('topSpeed', b)}">${b.performance.topSpeedFormatted} ${getWinnerClass('topSpeed', b).includes('emerald') ? winnerBadge : ''}</span>` },
-        { label: '0-60 km/h Accel', key: 'accel0to60', render: (b) => `${b.performance.accel0to60Formatted}` },
+        { label: '0-60 km/h Accel', key: 'accel0to60', render: (b) => `<span class="text-white">${b.performance.accel0to60Formatted}</span>` },
         { label: 'Kerb Weight', key: 'weight', render: (b) => `<span class="${getWinnerClass('weight', b)}">${b.performance.kerbWeightFormatted} ${getWinnerClass('weight', b).includes('emerald') ? winnerBadge : ''}</span>` },
         { label: 'Fuel Tank Capacity', key: 'fuelCapacity', render: (b) => `<span class="${getWinnerClass('fuelCapacity', b)}">${b.performance.fuelCapacityFormatted} ${getWinnerClass('fuelCapacity', b).includes('emerald') ? winnerBadge : ''}</span>` },
-        { label: 'Seat Height', key: 'seatHeight', render: (b) => `${b.performance.seatHeightFormatted}` },
-        { label: 'Ground Clearance', key: 'groundClearance', render: (b) => `${b.performance.groundClearanceFormatted}` },
-        { label: 'Cooling System', key: 'cooling', render: (b) => `${b.engine.cooling}` },
-        { label: 'Braking / ABS System', key: 'abs', render: (b) => `${b.brakesSuspension.absType}` },
-        { label: 'Front Suspension', key: 'frontSusp', render: (b) => `${b.brakesSuspension.frontSuspension}` },
-        { label: 'Riding Modes', key: 'modes', render: (b) => `${b.electricals.ridingModes}` },
-        { label: 'Quickshifter Fitment', key: 'quickshifter', render: (b) => `${b.electricals.quickshifter}` },
-        { label: 'Traction Control', key: 'tcs', render: (b) => `${b.electricals.tractionControl}` },
-        { label: 'Digital Console / Bluetooth', key: 'console', render: (b) => `${b.electricals.display} (${b.electricals.bluetooth})` }
+        { label: 'Seat Height', key: 'seatHeight', render: (b) => `<span class="text-white">${b.performance.seatHeightFormatted}</span>` },
+        { label: 'Ground Clearance', key: 'groundClearance', render: (b) => `<span class="text-white">${b.performance.groundClearanceFormatted}</span>` },
+        { label: 'Cooling System', key: 'cooling', render: (b) => `<span class="text-white">${b.engine.cooling}</span>` },
+        { label: 'Braking / ABS System', key: 'abs', render: (b) => `<span class="text-white">${b.brakesSuspension.absType}</span>` },
+        { label: 'Front Suspension', key: 'frontSusp', render: (b) => `<span class="text-white">${b.brakesSuspension.frontSuspension}</span>` },
+        { label: 'Riding Modes', key: 'modes', render: (b) => `<span class="text-white">${b.electricals.ridingModes}</span>` },
+        { label: 'Quickshifter Fitment', key: 'quickshifter', render: (b) => `<span class="text-white">${b.electricals.quickshifter}</span>` },
+        { label: 'Traction Control', key: 'tcs', render: (b) => `<span class="text-white">${b.electricals.tractionControl}</span>` },
+        { label: 'Digital Console / Bluetooth', key: 'console', render: (b) => `<span class="text-white">${b.electricals.display} (${b.electricals.bluetooth})</span>` }
       ];
 
       tableContainer.innerHTML = `
@@ -1055,10 +1055,10 @@ const MotoApp = {
               <div class="glass-card p-3 text-center h-100 position-relative">
                 <img src="${b.primaryImage}" alt="${b.name}" class="rounded-3 mx-auto mb-3" style="width: 100%; height: 160px; object-fit: cover;">
                 <div class="bike-brand-label">${b.brand}</div>
-                <h5 class="fw-bold mb-1">${b.name}</h5>
+                <h5 class="fw-bold text-white mb-1">${b.name}</h5>
                 <div class="text-accent fw-bold fs-5 mb-2">${b.priceFormatted}</div>
                 <div class="d-flex justify-content-center gap-2">
-                  <a href="details.html?id=${b.id}" class="btn btn-sm btn-outline-secondary rounded-pill px-3">View Details</a>
+                  <a href="details.html?id=${b.id}" class="btn btn-sm btn-outline-light rounded-pill px-3">View Details</a>
                   <button class="btn btn-sm btn-outline-danger rounded-circle p-1" onclick="MotoApp.toggleWishlist('${b.id}', event)">
                     <i class="bi bi-heart"></i>
                   </button>
@@ -1074,7 +1074,7 @@ const MotoApp = {
             <thead>
               <tr>
                 <th style="width: 25%;">Specification</th>
-                ${activeBikes.map(b => `<th style="width: ${75 / activeBikes.length}%; text-align: center;">${b.name}</th>`).join('')}
+                ${activeBikes.map(b => `<th style="width: ${75 / activeBikes.length}%; text-align: center;" class="text-white">${b.name}</th>`).join('')}
               </tr>
             </thead>
             <tbody>
@@ -1109,7 +1109,6 @@ const MotoApp = {
   initReviewsPage() {
     const filterSelect = document.getElementById('reviews-bike-filter');
     const reviewsListContainer = document.getElementById('reviews-list-container');
-    const writeReviewBtn = document.getElementById('write-review-btn');
     const reviewForm = document.getElementById('new-review-form');
     const formBikeSelect = document.getElementById('review-bike-select');
     const starRatingInput = document.getElementById('star-rating-input');
@@ -1160,7 +1159,7 @@ const MotoApp = {
           reviewsListContainer.innerHTML = `
             <div class="text-center py-5 glass-panel">
               <i class="bi bi-chat-square-text text-muted display-4 mb-3"></i>
-              <h5 class="fw-bold">No Reviews Yet for this Bike</h5>
+              <h5 class="fw-bold text-white">No Reviews Yet for this Bike</h5>
               <p class="text-muted small">Be the first to share your riding experience and impressions!</p>
             </div>
           `;
@@ -1174,7 +1173,7 @@ const MotoApp = {
                 <img src="${r.userAvatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80'}" 
                      alt="${r.userName}" class="rounded-circle" style="width: 48px; height: 48px; object-fit: cover;">
                 <div>
-                  <div class="fw-bold">${r.userName} ${r.verified ? '<span class="badge bg-success small ms-1"><i class="bi bi-patch-check-fill"></i> Verified Rider</span>' : ''}</div>
+                  <div class="fw-bold text-white">${r.userName} ${r.verified ? '<span class="badge bg-success small ms-1"><i class="bi bi-patch-check-fill"></i> Verified Rider</span>' : ''}</div>
                   <div class="text-muted small">${r.date} &bull; Reviewed <a href="details.html?id=${r.bikeId}" class="text-accent fw-bold">${r.bikeName}</a></div>
                 </div>
               </div>
@@ -1182,8 +1181,8 @@ const MotoApp = {
                 ${Array(5).fill(0).map((_, i) => `<i class="bi ${i < r.rating ? 'bi-star-fill' : 'bi-star'}"></i>`).join('')}
               </div>
             </div>
-            <h6 class="fw-bold mb-2">${r.title || 'Exceptional Machine!'}</h6>
-            <p class="text-muted-custom mb-3" style="font-size: 0.95rem;">${r.review}</p>
+            <h6 class="fw-bold text-white mb-2">${r.title || 'Exceptional Machine!'}</h6>
+            <p class="text-muted mb-3" style="font-size: 0.95rem;">${r.review}</p>
             ${r.pros ? `
               <div class="d-flex flex-wrap gap-2 mb-2">
                 <span class="badge bg-emerald text-white"><i class="bi bi-plus-circle me-1"></i> Pros: ${r.pros}</span>
@@ -1259,7 +1258,7 @@ const MotoApp = {
         <div class="col-12 col-md-6 col-lg-4 mb-4">
           <div class="glass-card p-4 h-100 d-flex flex-column text-center">
             <div class="brand-logo-pill mx-auto mb-3">${br.logoText}</div>
-            <h4 class="fw-bold mb-1">${br.name}</h4>
+            <h4 class="fw-bold text-white mb-1">${br.name}</h4>
             <div class="text-accent small fw-bold mb-2">"${br.tagline}"</div>
             <p class="text-muted small mb-3 flex-grow-1">${br.description}</p>
             <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25 mt-auto">
@@ -1288,7 +1287,7 @@ const MotoApp = {
             <div class="brand-logo-pill" style="width: 76px; height: 76px; font-size: 1rem;">${brand.logoText}</div>
           </div>
           <div class="col">
-            <h3 class="fw-bold mb-1">${brand.name} Lineup</h3>
+            <h3 class="fw-bold text-white mb-1">${brand.name} Lineup</h3>
             <div class="text-muted small">${brand.origin} &bull; ${brand.description}</div>
           </div>
         </div>
@@ -1380,12 +1379,12 @@ const MotoApp = {
         <div class="bike-card-body">
           <div class="bike-brand-label">${bike.brand}</div>
           <h4 class="bike-title">
-            <a href="details.html?id=${bike.id}">${bike.name}</a>
+            <a href="details.html?id=${bike.id}" class="text-white">${bike.name}</a>
           </h4>
 
           <div class="bike-price-wrap">
-            <span class="bike-price">${bike.priceFormatted}</span>
-            <span class="bike-price-sub">Ex-Showroom</span>
+            <span class="bike-price text-white">${bike.priceFormatted}</span>
+            <span class="bike-price-sub text-muted">Ex-Showroom</span>
           </div>
 
           <div class="bike-specs-grid">
@@ -1431,8 +1430,8 @@ const MotoApp = {
 
           <div class="flex-grow-1">
             <div class="bike-brand-label">${bike.brand}</div>
-            <h4 class="fw-bold mb-1">
-              <a href="details.html?id=${bike.id}">${bike.name}</a>
+            <h4 class="fw-bold text-white mb-1">
+              <a href="details.html?id=${bike.id}" class="text-white">${bike.name}</a>
             </h4>
             <p class="text-muted small mb-3">${bike.tagline}</p>
             <div class="d-flex flex-wrap gap-3 small text-muted">
@@ -1444,7 +1443,7 @@ const MotoApp = {
           </div>
 
           <div class="text-md-end d-flex flex-column gap-2" style="min-width: 180px;">
-            <div class="bike-price fs-4">${bike.priceFormatted}</div>
+            <div class="bike-price fs-4 text-white">${bike.priceFormatted}</div>
             <div class="d-flex gap-2">
               <a href="details.html?id=${bike.id}" class="btn-moto-primary flex-grow-1 py-2 px-3 small">Details</a>
               <button class="btn-moto-outline py-2 px-3" onclick="MotoApp.toggleCompare('${bike.id}', event)">

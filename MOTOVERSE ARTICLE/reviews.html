@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rider Reviews & Long-term Ownership Experiences | MotoVerse</title>
-  <meta name="description" content="Read unfiltered reviews and feedback from real motorcycle owners. Submit your own review and rate bikes across performance, mileage, maintenance and handling.">
+  <title>Rider Reviews & Community Ratings | MotoVerse</title>
+  <meta name="description" content="Read candid, verified reviews from real motorcycle owners. Submit your own riding impressions, maintenance reports, mileage feedback, and ratings.">
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏍️</text></svg>">
@@ -32,23 +32,23 @@
         <div class="brand-icon-flame">
           <i class="bi bi-speedometer"></i>
         </div>
-        <span>Moto<span class="text-accent">Verse</span></span>
+        <span class="text-white">Moto<span class="text-accent">Verse</span></span>
       </a>
 
       <!-- Right mobile action triggers -->
       <div class="d-flex align-items-center gap-2 d-lg-none order-lg-3">
         <button class="btn-icon-square search-modal-trigger" title="Search">
-          <i class="bi bi-search"></i>
+          <i class="bi bi-search text-white"></i>
         </button>
         <button class="btn-icon-square wishlist-modal-trigger position-relative" title="Wishlist">
-          <i class="bi bi-heart"></i>
+          <i class="bi bi-heart text-white"></i>
           <span class="nav-badge-count nav-wishlist-count" style="display: none;">0</span>
         </button>
         <button class="btn-icon-square theme-toggle-btn" title="Toggle Theme">
           <i class="bi bi-sun-fill text-amber"></i>
         </button>
         <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#motoNavbar" aria-controls="motoNavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list fs-2"></i>
+          <i class="bi bi-list fs-2 text-white"></i>
         </button>
       </div>
 
@@ -77,16 +77,16 @@
         <!-- Desktop Action Controls -->
         <div class="d-none d-lg-flex align-items-center gap-2">
           <button class="btn-icon-square search-modal-trigger" title="Quick Search (Ctrl+K)">
-            <i class="bi bi-search"></i>
+            <i class="bi bi-search text-white"></i>
           </button>
           
           <button class="btn-icon-square wishlist-modal-trigger position-relative" title="Wishlist Saved Bikes">
-            <i class="bi bi-heart"></i>
+            <i class="bi bi-heart text-white"></i>
             <span class="nav-badge-count nav-wishlist-count" style="display: none;">0</span>
           </button>
 
           <a href="compare.html" class="btn-icon-square position-relative" title="Bike Comparison Matrix">
-            <i class="bi bi-arrow-left-right"></i>
+            <i class="bi bi-arrow-left-right text-white"></i>
             <span class="nav-badge-count nav-compare-count" style="display: none;">0</span>
           </a>
 
@@ -98,201 +98,136 @@
     </div>
   </nav>
 
-  <!-- ==================== HEADER BANNER ==================== -->
+  <!-- ==================== REVIEWS HEADER ==================== -->
   <section class="py-4 bg-surface-custom border-bottom border-secondary border-opacity-10">
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-2 small">
-          <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
-          <li class="breadcrumb-item active text-accent" aria-current="page">Rider Reviews</li>
+          <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+          <li class="breadcrumb-item active text-accent fw-bold" aria-current="page">Community Reviews</li>
         </ol>
       </nav>
+
       <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
         <div>
-          <h1 class="fw-bold fs-2 mb-1">Community Reviews & Ratings</h1>
-          <p class="text-muted small mb-0">Genuine feedback, real-world highway mileage, and maintenance insights from passionate owners.</p>
+          <h1 class="fw-bold fs-2 mb-1 text-white">Rider Community Reviews</h1>
+          <p class="text-muted small mb-0">Genuine feedback, real-world highway mileage, pillion comfort, and long-term ownership perspectives.</p>
         </div>
-        <button class="btn-moto-primary" data-bs-toggle="modal" data-bs-target="#writeReviewModal">
-          <i class="bi bi-pencil-square"></i> Write a Review
-        </button>
+        <div>
+          <button class="btn-moto-primary text-white" data-bs-toggle="modal" data-bs-target="#writeReviewModal">
+            <i class="bi bi-pencil-square"></i> Write a Review
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== RATINGS BREAKDOWN & REVIEWS LIST ==================== -->
+  <!-- ==================== REVIEWS FEED ==================== -->
   <section class="py-5">
     <div class="container">
       <div class="row g-4">
         
-        <!-- LEFT: AGGREGATE STATS -->
+        <!-- Filter Controls -->
         <div class="col-12 col-lg-4">
-          <div class="glass-panel p-4 mb-4 sticky-top" style="top: calc(var(--navbar-height) + 20px);">
-            <h5 class="fw-bold mb-3">Overall Satisfaction Score</h5>
+          <div class="glass-panel p-4 sticky-top" style="top: calc(var(--navbar-height) + 20px);">
+            <h5 class="fw-bold text-white mb-3"><i class="bi bi-filter-circle text-accent me-2"></i> Filter Reviews</h5>
             
-            <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom border-secondary border-opacity-25">
-              <div class="display-3 fw-bold text-accent">4.8</div>
-              <div>
-                <div class="text-amber fs-5">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-half"></i>
-                </div>
-                <div class="text-muted small">Based on 1,250+ Rider Ratings</div>
-              </div>
+            <div class="mb-4">
+              <label class="small text-white text-uppercase fw-bold mb-1" style="font-size: 0.72rem;">Filter by Motorcycle</label>
+              <select id="reviews-bike-filter" class="form-select bg-surface-elevated text-white border-secondary border-opacity-25 rounded-3">
+                <!-- Injected via script.js -->
+              </select>
             </div>
 
-            <!-- Rating Progress Bars -->
-            <div class="d-flex flex-column gap-2 mb-4">
-              <div class="d-flex align-items-center gap-2 small">
-                <span style="width: 50px;">5 Star</span>
-                <div class="progress flex-grow-1 bg-surface-elevated" style="height: 8px;">
-                  <div class="progress-bar bg-emerald" style="width: 82%;"></div>
-                </div>
-                <span class="text-muted" style="width: 35px; text-align: right;">82%</span>
+            <div class="p-3 glass-card text-center mb-4">
+              <div class="text-amber fs-3 mb-1">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
               </div>
-              <div class="d-flex align-items-center gap-2 small">
-                <span style="width: 50px;">4 Star</span>
-                <div class="progress flex-grow-1 bg-surface-elevated" style="height: 8px;">
-                  <div class="progress-bar bg-cyan" style="width: 12%;"></div>
-                </div>
-                <span class="text-muted" style="width: 35px; text-align: right;">12%</span>
-              </div>
-              <div class="d-flex align-items-center gap-2 small">
-                <span style="width: 50px;">3 Star</span>
-                <div class="progress flex-grow-1 bg-surface-elevated" style="height: 8px;">
-                  <div class="progress-bar bg-amber" style="width: 4%;"></div>
-                </div>
-                <span class="text-muted" style="width: 35px; text-align: right;">4%</span>
-              </div>
-              <div class="d-flex align-items-center gap-2 small">
-                <span style="width: 50px;">2 Star</span>
-                <div class="progress flex-grow-1 bg-surface-elevated" style="height: 8px;">
-                  <div class="progress-bar bg-secondary" style="width: 1.5%;"></div>
-                </div>
-                <span class="text-muted" style="width: 35px; text-align: right;">1.5%</span>
-              </div>
-              <div class="d-flex align-items-center gap-2 small">
-                <span style="width: 50px;">1 Star</span>
-                <div class="progress flex-grow-1 bg-surface-elevated" style="height: 8px;">
-                  <div class="progress-bar bg-danger" style="width: 0.5%;"></div>
-                </div>
-                <span class="text-muted" style="width: 35px; text-align: right;">0.5%</span>
-              </div>
+              <div class="fw-bold fs-4 text-white">4.88 / 5.0</div>
+              <div class="text-muted small">Based on 1,200+ Verified Owner Ratings</div>
             </div>
 
-            <div class="p-3 glass-card rounded-3 text-center">
-              <div class="fw-bold text-emerald fs-5 mb-1"><i class="bi bi-shield-check"></i> 96% Would Recommend</div>
-              <div class="text-muted small">Motorcycle buyers find MotoVerse reviews reliable before dealership visits.</div>
+            <div class="small text-muted">
+              <i class="bi bi-patch-check-fill text-success me-1"></i> Reviews with verified badge indicate confirmed motorcycle owners.
             </div>
           </div>
         </div>
 
-        <!-- RIGHT: REVIEWS LIST WITH FILTER -->
+        <!-- Reviews List -->
         <div class="col-12 col-lg-8">
-          
-          <!-- Filter Selector Bar -->
-          <div class="glass-panel p-3 mb-4 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3">
-            <div class="d-flex align-items-center gap-2">
-              <label class="text-muted small text-nowrap mb-0 fw-bold">Filter by Bike:</label>
-              <select id="reviews-bike-filter" class="form-select form-select-sm bg-surface-elevated text-main border-secondary border-opacity-25 rounded-3" style="max-width: 260px;">
-                <!-- Populated via script.js -->
-              </select>
-            </div>
-
-            <button class="btn btn-sm btn-moto-outline" data-bs-toggle="modal" data-bs-target="#writeReviewModal">
-              <i class="bi bi-plus-lg me-1"></i> Post Your Review
-            </button>
-          </div>
-
-          <!-- Reviews Feed Container -->
           <div id="reviews-list-container">
             <!-- Dynamically populated via script.js -->
           </div>
-
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ==================== WRITE A REVIEW MODAL ==================== -->
+  <!-- ==================== WRITE REVIEW MODAL ==================== -->
   <div class="modal fade" id="writeReviewModal" tabindex="-1" aria-labelledby="writeReviewModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content bg-surface text-main border-secondary">
         <div class="modal-header border-secondary border-opacity-25">
-          <h5 class="modal-title fw-bold" id="writeReviewModalLabel">
-            <i class="bi bi-pencil-square text-accent me-2"></i> Write a Motorcycle Review
+          <h5 class="modal-title fw-bold text-white" id="writeReviewModalLabel">
+            <i class="bi bi-pencil-square text-accent me-2"></i> Share Your Riding Experience
           </h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body p-4">
+        <div class="modal-body">
           <form id="new-review-form">
-            <div class="row g-3 mb-3">
+            <div class="row g-3">
               <div class="col-12 col-md-6">
-                <label class="form-label small text-muted fw-bold">Select Motorcycle *</label>
-                <select id="review-bike-select" class="form-select bg-input text-main border-secondary" required>
-                  <!-- Injected via script.js -->
+                <label class="form-label small text-white fw-bold">Select Motorcycle *</label>
+                <select id="review-bike-select" class="form-select bg-input text-white border-secondary" required>
+                  <!-- Populated via script.js -->
                 </select>
               </div>
 
               <div class="col-12 col-md-6">
-                <label class="form-label small text-muted fw-bold">Your Rating *</label>
-                <div class="star-rating-input mt-1" id="star-rating-input">
-                  <i class="bi bi-star-fill active" data-val="1"></i>
-                  <i class="bi bi-star-fill active" data-val="2"></i>
-                  <i class="bi bi-star-fill active" data-val="3"></i>
-                  <i class="bi bi-star-fill active" data-val="4"></i>
-                  <i class="bi bi-star-fill active" data-val="5"></i>
+                <label class="form-label small text-white fw-bold">Your Name *</label>
+                <input type="text" id="review-name-input" class="form-control bg-input text-white border-secondary" placeholder="e.g. Vikram Joshi" required>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label small text-white fw-bold d-block">Your Rating *</label>
+                <div class="star-rating-input" id="star-rating-input">
+                  <i class="bi bi-star-fill active text-amber" data-val="1"></i>
+                  <i class="bi bi-star-fill active text-amber" data-val="2"></i>
+                  <i class="bi bi-star-fill active text-amber" data-val="3"></i>
+                  <i class="bi bi-star-fill active text-amber" data-val="4"></i>
+                  <i class="bi bi-star-fill active text-amber" data-val="5"></i>
                 </div>
               </div>
-            </div>
 
-            <div class="row g-3 mb-3">
-              <div class="col-12 col-md-6">
-                <label class="form-label small text-muted fw-bold">Full Name *</label>
-                <input type="text" id="review-name-input" class="form-control bg-input text-main border-secondary" required placeholder="e.g. Siddharth Rao">
+              <div class="col-12">
+                <label class="form-label small text-white fw-bold">Review Headline *</label>
+                <input type="text" id="review-title-input" class="form-control bg-input text-white border-secondary" placeholder="e.g. Outstanding highway handling and mileage" required>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label small text-white fw-bold">Detailed Review & Experience *</label>
+                <textarea id="review-text-input" rows="4" class="form-control bg-input text-white border-secondary" placeholder="Share your experience on engine performance, suspension comfort, real-world mileage, heating in traffic, and braking..." required></textarea>
               </div>
 
               <div class="col-12 col-md-6">
-                <label class="form-label small text-muted fw-bold">Email Address *</label>
-                <input type="email" id="review-email-input" class="form-control bg-input text-main border-secondary" required placeholder="name@domain.com">
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label small text-muted fw-bold">Review Headline *</label>
-              <input type="text" id="review-title-input" class="form-control bg-input text-main border-secondary" required placeholder="Summarize your experience (e.g. Exceptional Track Grip!)">
-            </div>
-
-            <div class="row g-3 mb-3">
-              <div class="col-12 col-md-6">
-                <label class="form-label small text-muted fw-bold">Pros / Highlights</label>
-                <input type="text" id="review-pros-input" class="form-control bg-input text-main border-secondary" placeholder="e.g. Quickshifter, high mileage, TFT">
+                <label class="form-label small text-emerald fw-bold"><i class="bi bi-plus-circle me-1"></i> Key Pros (Comma separated)</label>
+                <input type="text" id="review-pros-input" class="form-control bg-input text-white border-secondary" placeholder="e.g. Mileage, Braking bite, Suspension">
               </div>
 
               <div class="col-12 col-md-6">
-                <label class="form-label small text-muted fw-bold">Cons / Drawbacks</label>
-                <input type="text" id="review-cons-input" class="form-control bg-input text-main border-secondary" placeholder="e.g. Firm rear suspension, small tank">
+                <label class="form-label small text-danger fw-bold"><i class="bi bi-dash-circle me-1"></i> Key Cons (Comma separated)</label>
+                <input type="text" id="review-cons-input" class="form-control bg-input text-white border-secondary" placeholder="e.g. Engine heat, Pillion seat">
               </div>
             </div>
 
-            <div class="mb-4">
-              <label class="form-label small text-muted fw-bold">Detailed Review Text *</label>
-              <textarea id="review-text-input" rows="4" class="form-control bg-input text-main border-secondary" required placeholder="Share your insights on ride posture, engine refinement, service costs, and braking performance..."></textarea>
-            </div>
-
-            <div class="form-check mb-4">
-              <input class="form-check-input" type="checkbox" id="review-verified-check" checked>
-              <label class="form-check-label small text-muted" for="review-verified-check">
-                I confirm I have personally ridden or owned this motorcycle.
-              </label>
-            </div>
-
-            <div class="d-flex justify-content-end gap-2">
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn-moto-primary">Publish Review</button>
+            <div class="mt-4 pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-outline-secondary text-white" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn-moto-primary text-white">Publish Review</button>
             </div>
           </form>
         </div>
@@ -309,21 +244,21 @@
             <div class="brand-icon-flame">
               <i class="bi bi-speedometer"></i>
             </div>
-            <span>Moto<span class="text-accent">Verse</span></span>
+            <span class="text-white">Moto<span class="text-accent">Verse</span></span>
           </a>
           <p class="text-muted small mb-4" style="max-width: 320px;">
             The premier digital motorcycle discovery and comparison platform. Grounded in technical accuracy, rider telemetry, and pure two-wheel passion.
           </p>
           <div class="d-flex gap-2">
-            <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="bi bi-twitter-x text-white"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram text-white"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube text-white"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin text-white"></i></a>
           </div>
         </div>
 
         <div class="col-6 col-md-3 col-lg-2">
-          <h5 class="footer-heading">Quick Links</h5>
+          <h5 class="footer-heading text-white">Quick Links</h5>
           <ul class="footer-link-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="explore.html">Explore Bikes</a></li>
@@ -335,7 +270,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-3">
-          <h5 class="footer-heading">Bike Categories</h5>
+          <h5 class="footer-heading text-white">Bike Categories</h5>
           <ul class="footer-link-list">
             <li><a href="explore.html?category=Sports">Sports Bikes</a></li>
             <li><a href="explore.html?category=Naked">Naked Streetfighters</a></li>
@@ -347,14 +282,14 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3">
-          <h5 class="footer-heading">Popular Brands</h5>
+          <h5 class="footer-heading text-white">Popular Brands</h5>
           <div class="d-flex flex-wrap gap-2 mb-3">
-            <a href="explore.html?brand=Yamaha" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Yamaha</a>
-            <a href="explore.html?brand=Kawasaki" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Kawasaki</a>
-            <a href="explore.html?brand=KTM" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">KTM</a>
-            <a href="explore.html?brand=Royal%20Enfield" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Royal Enfield</a>
-            <a href="explore.html?brand=BMW" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">BMW Motorrad</a>
-            <a href="explore.html?brand=Ducati" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Ducati</a>
+            <a href="explore.html?brand=Yamaha" class="badge bg-surface-elevated text-white p-2 text-decoration-none">Yamaha</a>
+            <a href="explore.html?brand=Kawasaki" class="badge bg-surface-elevated text-white p-2 text-decoration-none">Kawasaki</a>
+            <a href="explore.html?brand=KTM" class="badge bg-surface-elevated text-white p-2 text-decoration-none">KTM</a>
+            <a href="explore.html?brand=Royal%20Enfield" class="badge bg-surface-elevated text-white p-2 text-decoration-none">Royal Enfield</a>
+            <a href="explore.html?brand=BMW" class="badge bg-surface-elevated text-white p-2 text-decoration-none">BMW Motorrad</a>
+            <a href="explore.html?brand=Ducati" class="badge bg-surface-elevated text-white p-2 text-decoration-none">Ducati</a>
           </div>
         </div>
       </div>
@@ -375,8 +310,8 @@
     <div class="search-modal-dialog">
       <div class="search-input-header">
         <i class="bi bi-search text-accent fs-5"></i>
-        <input type="text" id="quickSearchInput" class="search-input-field" placeholder="Search by bike model, brand, or category...">
-        <span class="badge bg-surface-elevated text-muted small">ESC</span>
+        <input type="text" id="quickSearchInput" class="search-input-field text-white" placeholder="Search by bike model, brand, or category...">
+        <span class="badge bg-surface-elevated text-white small">ESC</span>
       </div>
       <div id="quickSearchResults" class="search-results-list"></div>
     </div>
@@ -387,7 +322,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content bg-surface text-main border-secondary">
         <div class="modal-header border-secondary border-opacity-25">
-          <h5 class="modal-title fw-bold" id="wishlistModalLabel">
+          <h5 class="modal-title fw-bold text-white" id="wishlistModalLabel">
             <i class="bi bi-heart-fill text-danger me-2"></i> Saved Wishlist Bikes
           </h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -399,7 +334,7 @@
 
   <!-- Back to Top Button -->
   <button id="backToTopBtn" class="back-to-top-btn" title="Back to top">
-    <i class="bi bi-arrow-up"></i>
+    <i class="bi bi-arrow-up text-white"></i>
   </button>
 
   <!-- Scripts -->

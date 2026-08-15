@@ -32,23 +32,23 @@
         <div class="brand-icon-flame">
           <i class="bi bi-speedometer"></i>
         </div>
-        <span>Moto<span class="text-accent">Verse</span></span>
+        <span class="text-white">Moto<span class="text-accent">Verse</span></span>
       </a>
 
       <!-- Right mobile action triggers -->
       <div class="d-flex align-items-center gap-2 d-lg-none order-lg-3">
         <button class="btn-icon-square search-modal-trigger" title="Search">
-          <i class="bi bi-search"></i>
+          <i class="bi bi-search text-white"></i>
         </button>
         <button class="btn-icon-square wishlist-modal-trigger position-relative" title="Wishlist">
-          <i class="bi bi-heart"></i>
+          <i class="bi bi-heart text-white"></i>
           <span class="nav-badge-count nav-wishlist-count" style="display: none;">0</span>
         </button>
         <button class="btn-icon-square theme-toggle-btn" title="Toggle Theme">
           <i class="bi bi-sun-fill text-amber"></i>
         </button>
         <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#motoNavbar" aria-controls="motoNavbar" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list fs-2"></i>
+          <i class="bi bi-list fs-2 text-white"></i>
         </button>
       </div>
 
@@ -77,16 +77,16 @@
         <!-- Desktop Action Controls -->
         <div class="d-none d-lg-flex align-items-center gap-2">
           <button class="btn-icon-square search-modal-trigger" title="Quick Search (Ctrl+K)">
-            <i class="bi bi-search"></i>
+            <i class="bi bi-search text-white"></i>
           </button>
           
           <button class="btn-icon-square wishlist-modal-trigger position-relative" title="Wishlist Saved Bikes">
-            <i class="bi bi-heart"></i>
+            <i class="bi bi-heart text-white"></i>
             <span class="nav-badge-count nav-wishlist-count" style="display: none;">0</span>
           </button>
 
           <a href="compare.html" class="btn-icon-square position-relative" title="Bike Comparison Matrix">
-            <i class="bi bi-arrow-left-right"></i>
+            <i class="bi bi-arrow-left-right text-white"></i>
             <span class="nav-badge-count nav-compare-count" style="display: none;">0</span>
           </a>
 
@@ -103,11 +103,11 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-2 small">
-          <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
-          <li class="breadcrumb-item active text-accent" aria-current="page">Explore Bikes</li>
+          <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+          <li class="breadcrumb-item active text-accent fw-bold" aria-current="page">Explore Bikes</li>
         </ol>
       </nav>
-      <h1 class="fw-bold fs-2 mb-1">Discover Motorcycles</h1>
+      <h1 class="fw-bold fs-2 mb-1 text-white">Discover Motorcycles</h1>
       <p class="text-muted small mb-0">Use the smart multi-criteria filters below to find the exact machine tailored to your budget, style, and performance aspirations.</p>
     </div>
   </section>
@@ -121,7 +121,7 @@
         <div class="col-12 col-lg-3">
           <div class="filter-sidebar">
             <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-secondary border-opacity-25">
-              <h5 class="fw-bold fs-6 mb-0"><i class="bi bi-sliders2-vertical text-accent me-2"></i> Filters</h5>
+              <h5 class="fw-bold fs-6 mb-0 text-white"><i class="bi bi-sliders2-vertical text-accent me-2"></i> Filters</h5>
               <button id="explore-reset-btn" class="btn btn-sm btn-link text-accent text-decoration-none p-0 fw-bold small">
                 Reset All
               </button>
@@ -129,16 +129,16 @@
 
             <!-- Search Input -->
             <div class="mb-4">
-              <label class="filter-section-title">Search Models</label>
+              <label class="filter-section-title text-white">Search Models</label>
               <div class="position-relative">
-                <input type="text" id="explore-search-input" class="form-control bg-input text-main border-secondary border-opacity-25 rounded-3 ps-4" placeholder="e.g. Ninja, Duke, GT 650...">
+                <input type="text" id="explore-search-input" class="form-control bg-input text-white border-secondary border-opacity-25 rounded-3 ps-4" placeholder="e.g. Ninja, Duke, GT 650...">
                 <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-2 text-muted small"></i>
               </div>
             </div>
 
             <!-- Categories -->
             <div class="mb-4">
-              <label class="filter-section-title">Bike Category</label>
+              <label class="filter-section-title text-white">Bike Category</label>
               <div class="d-flex flex-wrap gap-2">
                 <button type="button" class="explore-cat-pill category-pill-btn active" data-category="all">All</button>
                 <button type="button" class="explore-cat-pill category-pill-btn" data-category="Sports">Sports</button>
@@ -153,95 +153,95 @@
             <!-- Price Range Slider -->
             <div class="mb-4">
               <div class="d-flex justify-content-between align-items-center mb-1">
-                <label class="filter-section-title mb-0">Max Budget</label>
+                <label class="filter-section-title mb-0 text-white">Max Budget</label>
                 <span id="explore-price-val" class="text-accent fw-bold small">₹35,00,000+</span>
               </div>
               <input type="range" id="explore-price-slider" class="custom-range-slider" min="50000" max="3500000" step="50000" value="3500000">
               <div class="d-flex justify-content-between text-muted" style="font-size: 0.72rem;">
-                <span>₹50K</span>
-                <span>₹15 Lakh</span>
-                <span>₹35 Lakh+</span>
+                <span class="text-muted">₹50K</span>
+                <span class="text-muted">₹15 Lakh</span>
+                <span class="text-muted">₹35 Lakh+</span>
               </div>
             </div>
 
             <!-- Engine Displacement CC -->
             <div class="mb-4">
-              <label class="filter-section-title">Engine Capacity</label>
+              <label class="filter-section-title text-white">Engine Capacity</label>
               <div class="d-flex flex-column gap-2 small">
                 <label class="form-check">
                   <input class="form-check-input explore-cc-radio" type="radio" name="ccFilter" value="all" checked>
-                  <span class="form-check-label text-muted">All Engine Capacities</span>
+                  <span class="form-check-label text-white">All Engine Capacities</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-cc-radio" type="radio" name="ccFilter" value="under200">
-                  <span class="form-check-label text-muted">Under 200 cc</span>
+                  <span class="form-check-label text-white">Under 200 cc</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-cc-radio" type="radio" name="ccFilter" value="200to400">
-                  <span class="form-check-label text-muted">200 cc – 400 cc</span>
+                  <span class="form-check-label text-white">200 cc – 400 cc</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-cc-radio" type="radio" name="ccFilter" value="400to800">
-                  <span class="form-check-label text-muted">400 cc – 800 cc</span>
+                  <span class="form-check-label text-white">400 cc – 800 cc</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-cc-radio" type="radio" name="ccFilter" value="above800">
-                  <span class="form-check-label text-muted">800 cc & Above (Liter Class)</span>
+                  <span class="form-check-label text-white">800 cc & Above (Liter Class)</span>
                 </label>
               </div>
             </div>
 
             <!-- Brand Filter Checkboxes -->
             <div class="mb-2">
-              <label class="filter-section-title">Brands</label>
+              <label class="filter-section-title text-white">Brands</label>
               <div class="d-flex flex-column gap-2 small" style="max-height: 200px; overflow-y: auto;">
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="Yamaha">
-                  <span class="form-check-label text-muted">Yamaha</span>
+                  <span class="form-check-label text-white">Yamaha</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="Kawasaki">
-                  <span class="form-check-label text-muted">Kawasaki</span>
+                  <span class="form-check-label text-white">Kawasaki</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="KTM">
-                  <span class="form-check-label text-muted">KTM</span>
+                  <span class="form-check-label text-white">KTM</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="Royal Enfield">
-                  <span class="form-check-label text-muted">Royal Enfield</span>
+                  <span class="form-check-label text-white">Royal Enfield</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="BMW Motorrad">
-                  <span class="form-check-label text-muted">BMW Motorrad</span>
+                  <span class="form-check-label text-white">BMW Motorrad</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="Ducati">
-                  <span class="form-check-label text-muted">Ducati</span>
+                  <span class="form-check-label text-white">Ducati</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="Honda">
-                  <span class="form-check-label text-muted">Honda</span>
+                  <span class="form-check-label text-white">Honda</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="TVS">
-                  <span class="form-check-label text-muted">TVS</span>
+                  <span class="form-check-label text-white">TVS</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="Suzuki">
-                  <span class="form-check-label text-muted">Suzuki</span>
+                  <span class="form-check-label text-white">Suzuki</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="Bajaj">
-                  <span class="form-check-label text-muted">Bajaj</span>
+                  <span class="form-check-label text-white">Bajaj</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="Triumph">
-                  <span class="form-check-label text-muted">Triumph</span>
+                  <span class="form-check-label text-white">Triumph</span>
                 </label>
                 <label class="form-check">
                   <input class="form-check-input explore-brand-check" type="checkbox" value="Harley-Davidson">
-                  <span class="form-check-label text-muted">Harley-Davidson</span>
+                  <span class="form-check-label text-white">Harley-Davidson</span>
                 </label>
               </div>
             </div>
@@ -254,13 +254,13 @@
           <!-- Control Bar -->
           <div class="glass-panel p-3 mb-4 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3">
             <div id="explore-count-display" class="small text-muted">
-              Showing <strong>0</strong> Bikes
+              Showing <strong class="text-white">0</strong> Bikes
             </div>
 
             <div class="d-flex align-items-center gap-3">
               <div class="d-flex align-items-center gap-2">
-                <span class="text-muted small text-nowrap">Sort by:</span>
-                <select id="explore-sort-select" class="form-select form-select-sm bg-surface-elevated text-main border-secondary border-opacity-25 rounded-3" style="width: 170px;">
+                <span class="text-white small text-nowrap">Sort by:</span>
+                <select id="explore-sort-select" class="form-select form-select-sm bg-surface-elevated text-white border-secondary border-opacity-25 rounded-3" style="width: 170px;">
                   <option value="featured">Featured First</option>
                   <option value="price-low">Price: Low to High</option>
                   <option value="price-high">Price: High to Low</option>
@@ -272,10 +272,10 @@
 
               <div class="btn-group btn-group-sm" role="group">
                 <button type="button" class="btn btn-outline-secondary view-mode-btn active" data-view="grid" title="Grid View">
-                  <i class="bi bi-grid-fill"></i>
+                  <i class="bi bi-grid-fill text-white"></i>
                 </button>
                 <button type="button" class="btn btn-outline-secondary view-mode-btn" data-view="list" title="List View">
-                  <i class="bi bi-list-ul"></i>
+                  <i class="bi bi-list-ul text-white"></i>
                 </button>
               </div>
             </div>
@@ -300,7 +300,7 @@
             <div class="brand-icon-flame">
               <i class="bi bi-speedometer"></i>
             </div>
-            <span>Moto<span class="text-accent">Verse</span></span>
+            <span class="text-white">Moto<span class="text-accent">Verse</span></span>
           </a>
           <p class="text-muted small mb-4" style="max-width: 320px;">
             The premier digital motorcycle discovery and comparison platform. Grounded in technical accuracy, rider telemetry, and pure two-wheel passion.
@@ -314,7 +314,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-2">
-          <h5 class="footer-heading">Quick Links</h5>
+          <h5 class="footer-heading text-white">Quick Links</h5>
           <ul class="footer-link-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="explore.html">Explore Bikes</a></li>
@@ -326,7 +326,7 @@
         </div>
 
         <div class="col-6 col-md-3 col-lg-3">
-          <h5 class="footer-heading">Bike Categories</h5>
+          <h5 class="footer-heading text-white">Bike Categories</h5>
           <ul class="footer-link-list">
             <li><a href="explore.html?category=Sports">Sports Bikes</a></li>
             <li><a href="explore.html?category=Naked">Naked Streetfighters</a></li>
@@ -338,14 +338,14 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3">
-          <h5 class="footer-heading">Popular Brands</h5>
+          <h5 class="footer-heading text-white">Popular Brands</h5>
           <div class="d-flex flex-wrap gap-2 mb-3">
-            <a href="explore.html?brand=Yamaha" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Yamaha</a>
-            <a href="explore.html?brand=Kawasaki" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Kawasaki</a>
-            <a href="explore.html?brand=KTM" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">KTM</a>
-            <a href="explore.html?brand=Royal%20Enfield" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Royal Enfield</a>
-            <a href="explore.html?brand=BMW" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">BMW Motorrad</a>
-            <a href="explore.html?brand=Ducati" class="badge bg-surface-elevated text-muted p-2 text-decoration-none">Ducati</a>
+            <a href="explore.html?brand=Yamaha" class="badge bg-surface-elevated text-white p-2 text-decoration-none">Yamaha</a>
+            <a href="explore.html?brand=Kawasaki" class="badge bg-surface-elevated text-white p-2 text-decoration-none">Kawasaki</a>
+            <a href="explore.html?brand=KTM" class="badge bg-surface-elevated text-white p-2 text-decoration-none">KTM</a>
+            <a href="explore.html?brand=Royal%20Enfield" class="badge bg-surface-elevated text-white p-2 text-decoration-none">Royal Enfield</a>
+            <a href="explore.html?brand=BMW" class="badge bg-surface-elevated text-white p-2 text-decoration-none">BMW Motorrad</a>
+            <a href="explore.html?brand=Ducati" class="badge bg-surface-elevated text-white p-2 text-decoration-none">Ducati</a>
           </div>
         </div>
       </div>
@@ -366,12 +366,10 @@
     <div class="search-modal-dialog">
       <div class="search-input-header">
         <i class="bi bi-search text-accent fs-5"></i>
-        <input type="text" id="quickSearchInput" class="search-input-field" placeholder="Search by bike model, brand, or category...">
-        <span class="badge bg-surface-elevated text-muted small">ESC</span>
+        <input type="text" id="quickSearchInput" class="search-input-field text-white" placeholder="Search by bike model, brand, or category...">
+        <span class="badge bg-surface-elevated text-white small">ESC</span>
       </div>
-      <div id="quickSearchResults" class="search-results-list">
-        <!-- Injected dynamically -->
-      </div>
+      <div id="quickSearchResults" class="search-results-list"></div>
     </div>
   </div>
 
@@ -380,21 +378,19 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content bg-surface text-main border-secondary">
         <div class="modal-header border-secondary border-opacity-25">
-          <h5 class="modal-title fw-bold" id="wishlistModalLabel">
+          <h5 class="modal-title fw-bold text-white" id="wishlistModalLabel">
             <i class="bi bi-heart-fill text-danger me-2"></i> Saved Wishlist Bikes
           </h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" id="wishlistModalItems">
-          <!-- Populated dynamically -->
-        </div>
+        <div class="modal-body" id="wishlistModalItems"></div>
       </div>
     </div>
   </div>
 
   <!-- Back to Top Button -->
   <button id="backToTopBtn" class="back-to-top-btn" title="Back to top">
-    <i class="bi bi-arrow-up"></i>
+    <i class="bi bi-arrow-up text-white"></i>
   </button>
 
   <!-- Scripts -->
