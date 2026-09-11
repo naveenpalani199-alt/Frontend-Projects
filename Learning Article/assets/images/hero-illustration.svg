@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer Glass Frame -->
+  <rect x="20" y="20" width="560" height="360" rx="16" fill="url(#gradBg)" stroke="#334155" stroke-width="2" />
+
+  <!-- Window Bar -->
+  <rect x="20" y="20" width="560" height="40" rx="16" fill="#1e293b" />
+  <rect x="20" y="44" width="560" height="16" fill="#1e293b" />
+  <circle cx="46" cy="40" r="6" fill="#ef4444" />
+  <circle cx="66" cy="40" r="6" fill="#f59e0b" />
+  <circle cx="86" cy="40" r="6" fill="#10b981" />
+  <text x="300" y="45" fill="#94a3b8" font-family="monospace" font-size="12" text-anchor="middle">js-logic-lab/practice.js</text>
+
+  <!-- Code Window Content -->
+  <g font-family="monospace" font-size="13" fill="#f8fafc">
+    <text x="50" y="90" fill="#64748b">// 10 Programming Challenges to build rock-solid logic</text>
+    <text x="50" y="115"><tspan fill="#818cf8">function</tspan> <tspan fill="#6ee7b7">solveJavaScriptLogic</tspan>(<tspan fill="#fbbf24">challenge</tspan>) {</text>
+    <text x="75" y="140"><tspan fill="#818cf8">const</tspan> skills = [<tspan fill="#34d399">"Arrays"</tspan>, <tspan fill="#34d399">"Strings"</tspan>, <tspan fill="#34d399">"Math"</tspan>, <tspan fill="#34d399">"Loops"</tspan>];</text>
+    <text x="75" y="165"><tspan fill="#818cf8">const</tspan> confidence = skills.<tspan fill="#38bdf8">map</tspan>(s =&gt; s + <tspan fill="#34d399">" Mastered"</tspan>);</text>
+    <text x="75" y="195"><tspan fill="#818cf8">return</tspan> {</text>
+    <text x="100" y="220">readyForInterviews: <tspan fill="#34d399">true</tspan>,</text>
+    <text x="100" y="245">problemSolvingLevel: <tspan fill="#fbbf24">"Expert"</tspan></text>
+    <text x="75" y="270">};</text>
+    <text x="50" y="295">}</text>
+  </g>
+
+  <!-- Output Box Floating Card -->
+  <rect x="280" y="260" width="280" height="100" rx="10" fill="#090d16" stroke="#10b981" stroke-width="1.5" filter="url(#glow)" />
+  <text x="300" y="285" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">✓ LIVE TEST SUITE: 10/10 PASSED</text>
+  <text x="300" y="310" fill="#94a3b8" font-family="monospace" font-size="11">&gt; 153 is an Armstrong Number</text>
+  <text x="300" y="330" fill="#94a3b8" font-family="monospace" font-size="11">&gt; Primes [10..30]: [11, 13, 17, 19, 23, 29]</text>
+  <text x="300" y="348" fill="#38bdf8" font-family="monospace" font-size="10">Execution Time: 0.18ms</text>
+</svg>

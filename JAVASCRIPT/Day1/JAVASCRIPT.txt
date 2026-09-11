@@ -1,0 +1,226 @@
+JAVASCRIPT
+
+
+var:                                           
+
+1.var username
+2.var userid
+3.var useraddress
+4.var userpassword
+5.var usernumber
+6.var usergender
+7.var bikename
+8.var bikemodel
+9.var bikecompany
+10.var bikecapacity
+11.var bikemileage
+12.var carname
+12.var carmodel
+13.var carmileage
+14.var carnumber
+15.var carcompany
+16.var caryear
+17.var bikenumber
+18.var containerid
+19.var containername
+20.var containerstock
+21.var containercompany
+22.var containerstock
+23.var containeraddress
+24.var moviename
+25.var movieactor
+26.var movieactress
+27.var moviedate
+28.var moviedirector
+29.var movielocation
+30.var movieconcept
+31.var movielyricist
+32.var moviemusicdirector
+33.var movieplatform
+34.var hotelname
+35.var hotelowner
+36.var hotelmenu
+37.var hotellocation
+38.var hotelopentime
+39.var hotelclosetime
+40.var hotelbranch
+41.var cricketteam
+42.var cricketformat
+43.var cricketcaptain
+44.var cricketball
+45.var playerjersey
+46.var player_sno
+47.var platerrole
+48.var cricketvenue
+
+let:
+
+let username;
+let userid;
+let useraddress;
+let userpassword;
+let usernumber;
+let usergender;
+let bikename;
+let bikemodel;
+let bikecompany;
+let bikecapacity;
+let bikemileage;
+let bikenumber;
+let carname;
+let carmodel;
+let carmileage;
+let carnumber;
+let carcompany;
+let caryear;
+let containerid;
+let containername;
+let containerstock;
+let containercompany;
+let containeraddress;
+let moviename;
+let movieactor;
+let movieactress;
+let moviedate;
+let moviedirector;
+let movielocation;
+let movieconcept;
+let movielyricist;
+let moviemusicdirector;
+let movieplatform;
+let hotelname;
+let hotelowner;
+let hotelmenu;
+let hotellocation;
+let hotelopentime;
+let hotelclosetime;
+let hotelbranch;
+let cricketteam;
+let cricketformat;
+let cricketcaptain;
+let cricketball;
+let playerjersey;
+let player_sno;
+let platerrole;
+let cricketvenue;
+
+const:
+
+const username = "";
+const userid = "";
+const useraddress = "";
+const userpassword = "";
+const usernumber = "";
+const usergender = "";
+const bikename = "";
+const bikemodel = "";
+const bikecompany = "";
+const bikecapacity = "";
+const bikemileage = "";
+const bikenumber = "";
+const carname = "";
+const carmodel = "";
+const carmileage = "";
+const carnumber = "";
+const carcompany = "";
+const caryear = "";
+const containerid = "";
+const containername = "";
+const containerstock = "";
+const containercompany = "";
+const containeraddress = "";
+const moviename = "";
+const movieactor = "";
+const movieactress = "";
+const moviedate = "";
+const moviedirector = "";
+const movielocation = "";
+const movieconcept = "";
+const movielyricist = "";
+const moviemusicdirector = "";
+const movieplatform = "";
+const hotelname = "";
+const hotelowner = "";
+const hotelmenu = "";
+const hotellocation = "";
+const hotelopentime = "";
+const hotelclosetime = "";
+const hotelbranch = "";
+const cricketteam = "";
+const cricketformat = "";
+const cricketcaptain = "";
+const cricketball = "";
+const playerjersey = "";
+const player_sno = "";
+const platerrole = "";
+const cricketvenue = "";
+
+
+Q&A:
+
+1.What is JavaScript?
+JavaScript is a high-level, interpreted programming language mainly used for creating interactive and dynamic content on websites. It runs in the browser and allows developers to add functionality like animations, form validation, and interactive elements.
+
+2.What is a variable?
+A variable is a named storage location in memory that holds data. It allows you to store, update, and retrieve values during program execution.
+
+3.What is a variable?
+A variable is a named storage location in memory that holds data. It allows you to store, update, and retrieve values during program execution.
+       let username;
+
+4.What is initialization?
+Initialization means assigning an initial value to a variable at the time of declaration.
+Example:let username="Naveen"
+
+
+5.What is an assignment operator?
+The assignment operator (=) is used to assign values to variables.
+Example: let age="23"
+
+6.What are var, let and const?
+var → Old way of declaring variables (function-scoped).
+
+let → Modern way, block-scoped, allows reassignment.
+
+const → Block-scoped, but cannot be reassigned after initialization.
+
+
+7. What is the difference between var, let and const?
+
+let is used to declare variables whose value can be reassigned.
+Example:
+let username = "React";
+username = "JavaScript";
+
+var is the older/traditional way of declaring variables.
+Example:
+var username = "React";
+var city = "Chennai";
+
+const is used when the variable should not be reassigned.
+Example:
+const course = "React";
+The following is not allowed:
+const course = "React";
+course = "JavaScript";
+
+8.What is ES6?
+ES6 (ECMAScript 2015) is a major update to JavaScript that introduced new features like:
+
+let and const
+
+Arrow functions (()=>)
+
+Template literals (`Hello ${name}`)
+
+Classes
+
+Modules (import/export)
+
+Promises
+
+9.What is a JavaScript Engine?
+A JavaScript Engine is a program that executes JavaScript code. It parses, compiles, and runs the code inside browsers or environments like Node.js.
+
+10.What is V8?
+V8 is Google’s open-source JavaScript engine, used in Chrome and Node.js. It compiles JavaScript into machine code for faster execution, making it one of the fastest engines available.

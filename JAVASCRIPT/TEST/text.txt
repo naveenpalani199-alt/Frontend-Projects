@@ -1,0 +1,157 @@
+1.   
+
+let result = "";
+
+for (let i = 2; i <= 50; i += 2) {
+    result += i + " ";
+}
+
+console.log(result.trim());
+
+2.   
+
+let number = 5;  
+
+let factorial = 1;
+let i = 1;
+
+while (i <= number) {
+    factorial *= i; 
+    i++;           
+}
+
+console.log("Factorial of " + number + " is: " + factorial);
+
+3. 
+
+let i = 20;
+
+do {
+    console.log(i);
+    i--; 
+} while (i >= 1);
+
+4. 
+
+let text = "JavaScript";
+let reversed = "";
+
+for (let i = text.length - 1; i >= 0; i--) {
+    reversed += text[i];
+    
+}
+
+console.log("Original: " + text);
+console.log("Reversed: " + reversed);
+
+
+5.  
+
+const numbers = [45, 12, 89, 34, 67, 90, 23];
+
+let highest = numbers[0]; // assume first element is highest
+
+for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] > highest) {
+        highest = numbers[i];
+    }
+}
+
+console.log("Highest number is: " + highest);
+
+6.  const numbers = [10, 15, 20, 25, 30, 35, 40];
+let total = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 !== 0) {
+        console.log(numbers[i]);
+        total += numbers[i];
+    }
+}
+
+console.log("Total of odd numbers: " + total);
+
+7.   const student = {
+    name: "Ravi",
+    age: 22,
+    course: "JavaScript",
+    mark: 85
+};
+
+console.log("Name: " + student.name);
+console.log("Age: " + student.age);
+console.log("Course: " + student.course);
+console.log("Mark: " + student.mark);
+
+
+8.const students = [
+    { name: "Arun", mark: 85 },
+    { name: "Bala", mark: 65 },
+    { name: "Charan", mark: 90 },
+    { name: "Deepak", mark: 70 }
+];
+
+for (let i = 0; i < students.length; i++) {
+    if (students[i].mark > 75) {
+        console.log(students[i].name + " scored " + students[i].mark);
+    }
+}
+
+10 . function introduce(name, age) {
+    return `My name is ${name} and I am ${age} years old.`;
+}
+
+console.log(introduce("Ravi", 25));
+
+
+11. {
+    var a = 10;   
+    let b = 20;  
+    const c = 30; 
+}
+
+console.log(a); //  Accessible
+// console.log(b); Error: b is not defined
+// console.log(c);  Error: c is not defined
+
+12.    console.log(a); // Output: undefined
+var a = 10;
+
+13.const student = {
+    name: "Ravi",
+    age: 22,
+    course: "JavaScript"
+};
+
+const { name, course } = student;
+console.log(name); 
+console.log(course);
+
+14. const sum = (...numbers) => numbers.reduce((total, num) => total + num, 0);
+
+console.log(sum(10, 20, 30, 40)); // 100
+
+
+15.const users = [
+    {
+        name: "Ravi",
+        marks: [80, 90, 85],
+        address: { city: "Chennai" }
+    },
+    {
+        name: "Kumar",
+        marks: [60, 70, 75]
+    }
+];
+
+users.forEach(user => {
+    const totalMarks = user.marks.reduce((sum, mark) => sum + mark, 0);
+    const city = user.address?.city || "City Not Available";
+    console.log(`Name: ${user.name}, City: ${city}, Total Marks: ${totalMarks}`);
+});
+
+
+
+
+
+

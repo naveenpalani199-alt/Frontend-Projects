@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task1</title>
+  
+  <style>
+    
+    .hidden {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+
+   
+    .visible {
+      max-height: 200px; 
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="toggleBtn">Show / Hide</button>
+  <p id="myPara" class="hidden">
+    This is the hidden paragraph. Click the button to toggle me smoothly!
+  </p>
+
+  <script src="assets/js/task1.js"></script>
+
+  
+
+</body>
+</html>

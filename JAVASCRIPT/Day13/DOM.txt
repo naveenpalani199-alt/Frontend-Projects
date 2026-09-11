@@ -1,0 +1,31 @@
+1.DOM = Document Object Model → A tree-like representation of the HTML document.
+  It allows JavaScript to access, modify, and update elements, attributes, and styles dynamically.
+
+2.HTML is the markup used to define the initial structure of a webpage. DOM is the object representation created by the browser from that HTML, which JavaScript can interact with dynamically.
+
+
+4.A DOM selector is used to select or access HTML elements from JavaScript.
+
+JavaScript provides multiple methods to select elements.
+
+The most important selectors are:
+
+getElementById()
+getElementsByClassName()
+getElementsByTagName()
+querySelector()
+querySelectorAll()
+
+
+5.getElementById() selects an element using its ID only. querySelector() supports CSS selectors and returns the first matching element.
+
+6.querySelector() returns the first matching element, while querySelectorAll() returns all matching elements as a NodeList.
+
+
+7.innerHTML reads or writes HTML markup, while textContent reads or writes plain text and innerText is already have a line to copy the same line the webpage it doesn't give a new line.
+
+8.Change text with textContent
+
+Apply styles with .style
+
+Add/remove classes with classList
