@@ -1,0 +1,71 @@
+1. What is React?
+->React is an open-source JavaScript library developed by Facebook.
+->It focuses on building UI components and managing dynamic views in web applications.
+->Unlike frameworks (like Angular), React only handles the view layer; developers often combine it with other libraries for routing or state management.
+
+2. Library vs Framework
+React = Library
+
+Provides tools for building UI but leaves architecture decisions to developers.
+
+Frameworks (e.g., Angular, Vue)
+
+Provide a complete structure with routing, state management, and built-in solutions.
+
+Why React is a library?
+
+It’s flexible, unopinionated, and can be integrated into existing projects without enforcing strict rules.
+
+3. What is a Component?
+A component is a reusable, independent piece of UI (like a button, form, or navbar).
+
+Components can be functional (using functions and hooks) or class-based (older style).
+
+4. Why are Components Important?
+Reusability → Write once, use multiple times.
+
+Maintainability → Easier to debug and update.
+
+Separation of concerns → Each component handles its own logic and UI.
+
+Scalability → Large apps can be broken into smaller, manageable parts.
+
+5. What is JSX?
+JSX (JavaScript XML) is a syntax extension that lets you write HTML-like code inside JavaScript.
+
+Example:
+
+jsx
+const element = <h1>Hello World</h1>;
+JSX is not HTML; it compiles to React.createElement() calls.
+
+Benefits: Readable, declarative, and integrates logic with UI.
+
+6. What is the Virtual DOM?
+The Virtual DOM (VDOM) is a lightweight JavaScript representation of the Real DOM.
+
+When state changes:
+
+React creates a new Virtual DOM tree.
+
+Compares it with the previous tree (diffing).
+
+Updates only the changed parts in the Real DOM.
+
+This makes updates fast and efficient.
+
+
+7. What is the Real DOM?
+The Real DOM is the actual browser-rendered structure of HTML elements.
+
+Updating the Real DOM directly is slow, because each change triggers style recalculation, layout, and repaint.
+
+React minimizes these costly operations by batching updates via the Virtual DOM.
+
+
+8. What is Reconciliation?
+Reconciliation is the process React uses to compare the new Virtual DOM with the old one and update only what’s necessary in the Real DOM.
+
+Uses diffing algorithms and keys for efficient updates.
+
+Example: If a <div> changes to a <span>, React destroys the old subtree and rebuilds a new one.
